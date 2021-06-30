@@ -3,8 +3,8 @@
 //   var cartValue = document.getElementById("cartValue").value;
 //   var word = "items";
 
-//   getElementById("valueReturn").innerHTML =
-//     "You succesfuly added " + cartValue + " " + word + "to your shoping cart";
+//   document.getElementById("valueReturn").innerHTML =
+//     "You succesfuly added " + cartValue + " " + word + " to your shoping cart";
 // }
 
 document.getElementById('kvietejas').addEventListener("click", ikrepseli);
@@ -21,10 +21,18 @@ function ikrepseli() {
     if( (kiekis > 10 && kiekis < 20) || kiekis%10 == 0) {
         zodis = 'prekių';
     } 
+     if (kiekis > 100){
+        var error = document.getElementById('kiekis');
+        error.classList.add('error');
+        alert("Jūsų pasirinktas prekių kiekis yra didesnis nei leistinas");
+     }
+     if (kiekis < 1) {
+        var error = document.getElementById('kiekis');
+        error.classList.add('error');
+        alert("Pasirinktas per mažas kiekis");
 
-    if ((kiekis%100 == 11) || (kiekis%100 < 21 )){
-        zodis = 'prekių';
-    }
+     }
+   
 
     document.getElementById('messages').innerHTML = 'Jūs sėkmingai pridėjote ' + kiekis + ' ' + zodis + '  į savo krepšelį!';
 
