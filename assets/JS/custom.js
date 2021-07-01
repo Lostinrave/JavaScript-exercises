@@ -42,6 +42,8 @@ function ikrepseli() {
   }
   document.getElementById('reset').onclick = function() {   
     document.getElementById("kiekis").value = '1';
+    document.getElementById("messages").innerHTML =
+      " ";
    
   }
 
