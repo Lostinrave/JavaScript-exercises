@@ -36,6 +36,15 @@ function ikrepseli() {
     document.getElementById("messages").innerHTML =
       "Jūs negalite pridėti šio kiekio";
   }
+ 
+      
+
+  }
+  document.getElementById('reset').onclick = function() {   
+    document.getElementById("kiekis").value = '1';
+   
+  }
+
 
   //alert('Jūs sėkmingai pridėjote ' + kiekis + ' prekę į savo krepšelį!');
-}
+
