@@ -45,6 +45,35 @@ function ikrepseli() {
    
   }
 
+const duomenys = [
+    {
+    vardas : 'petras',
+    pavarde : 'petraitis',
+    gimtadienis : '1992-07-20',
+    lytis : 'vyras'
+    },
 
-  //alert('Jūs sėkmingai pridėjote ' + kiekis + ' prekę į savo krepšelį!');
+    {
+    vardas : 'jonas',
+    pavarde : 'jonaitis',
+    gimtadienis : '1990-06-13',
+    lytis : 'vyras'
+    },
 
+    {
+    vardas : 'janina',
+    pavarde : 'janiene',
+    gimtadienis : '1996-04-15',
+    lytis : 'moteris'
+    }
+];
+ 
+for(let eile in duomenys){
+    console.log(duomenys[eile]['vardas']);
+    console.log(duomenys[eile]['pavarde']);
+    console.log(duomenys[eile]['gimtadienis']);
+    console.log(duomenys[eile]['lytis']);
+}
+// for(let eile in duomenys){
+//     console.log(duomenys[eile]['lytis']);
+// }
