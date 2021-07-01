@@ -45,7 +45,7 @@ function ikrepseli() {
    
   }
 
-const duomenys = [
+let duomenys = [
     {
     vardas : 'petras',
     pavarde : 'petraitis',
@@ -68,12 +68,15 @@ const duomenys = [
     }
 ];
  
-for(let eile in duomenys){
-    console.log(duomenys[eile]['vardas']);
-    console.log(duomenys[eile]['pavarde']);
-    console.log(duomenys[eile]['gimtadienis']);
-    console.log(duomenys[eile]['lytis']);
-}
 // for(let eile in duomenys){
+//     console.log(duomenys[eile]['vardas']);
+//     console.log(duomenys[eile]['pavarde']);
+//     console.log(duomenys[eile]['gimtadienis']);
 //     console.log(duomenys[eile]['lytis']);
 // }
+
+for(let eile in duomenys) {
+    console.log(duomenys[eile]['vardas'], duomenys[eile]['pavarde'], 
+    duomenys[eile]['gimtadienis'], duomenys[eile]['lytis']);
+
+}
