@@ -45,7 +45,7 @@ function ikrepseli() {
    
   }
 
-let duomenys = [
+const duomenys = [
     {
     vardas : 'petras',
     pavarde : 'petraitis',
