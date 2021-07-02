@@ -37,7 +37,7 @@ function ikrepseli() {
       "Jūs negalite pridėti šio kiekio";
   }
 }
-document.getElementById("reset").onclick = function () {
+document.getElementById("siteWrapper").onclick = function () {
   document.getElementById("kiekis").value = "1";
   document.getElementById("messages").innerHTML = "";
 };
@@ -92,18 +92,9 @@ for (let indeksas in duomenys) {
 
 // Easy jquery table log print start
 var dataSet = [
-    ["Petras", 
-    "Petraitis", 
-    "1992-07-20", 
-    "Vyras"],
-    ["Jonas", 
-    "Jonaitis", 
-    "1990-06-13", 
-    "Vyras"],
-    ["Janina", 
-    "Jonaitiene", 
-    "1996-04-15", 
-    "Moteris"]
+  ["Petras", "Petraitis", "1992-07-20", "Vyras"],
+  ["Jonas", "Jonaitis", "1990-06-13", "Vyras"],
+  ["Janina", "Jonaitiene", "1996-04-15", "Moteris"],
 ];
 
 $(document).ready(function () {
@@ -118,3 +109,27 @@ $(document).ready(function () {
   });
 });
 // Easy jquery table log print end
+
+// switch example start
+let day = "Saturday";
+switch (new Date().getDay()) {
+
+  case 0:
+    day = "Monday";
+    break;
+  case 1:
+    day = "Tuesday";
+    break;
+  case 2:
+    day = "Wednesday";
+    break;
+  case 3:
+    day = "Thursday";
+    break;
+  case 4:
+    day = "Friday";
+    break;
+  default:
+    day = "Weekend baby!"
+}
+document.getElementById("data").innerHTML = "Today is " + day;

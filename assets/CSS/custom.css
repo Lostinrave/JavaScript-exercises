@@ -4,3 +4,6 @@
 .dataTables_wrapper {
     margin-top: 50px;
 }
+#siteWrapper {
+    height: 100vh;
+}
