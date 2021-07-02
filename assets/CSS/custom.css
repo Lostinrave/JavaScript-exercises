@@ -7,3 +7,12 @@
 #siteWrapper {
     height: 100vh;
 }
+#asmenineInfo_wrapper {
+    display: none;
+}
+#asmenineInfo_wrapper.open {
+    display: block;
+}
+.table-button {
+    margin-top: 50px;
+}

@@ -37,7 +37,7 @@ function ikrepseli() {
       "Jūs negalite pridėti šio kiekio";
   }
 }
-document.getElementById("siteWrapper").onclick = function () {
+document.getElementById("reset").onclick = function () {
   document.getElementById("kiekis").value = "1";
   document.getElementById("messages").innerHTML = "";
 };
@@ -133,3 +133,69 @@ switch (new Date().getDay()) {
     day = "Weekend baby!"
 }
 document.getElementById("data").innerHTML = "Today is " + day;
+
+// switch example end
+
+
+// Table on click JS start
+
+document.getElementById("tableToggle").onclick = function () {
+  var popup = document.getElementById("asmenineInfo_wrapper");
+
+  //Funkcija contains grazina reiksme true arba false
+  if (popup.classList.contains("open") == false) {
+    popup.classList.add("open");
+    document.getElementById("tableToggle").innerText = "Slepti";
+  } else {
+    popup.classList.remove("open");
+    document.getElementById("tableToggle").innerText = "Rodyti";
+  }
+};
+
+// found solution on stack:
+// const btn = document.getElementById("tableToggle");
+
+// btn.addEventListener("click", ()=>{
+
+//     if(btn.value === "Rodyti"){
+//         btn.value = "Slepti";
+//     }else{
+//         btn.value= "Rodyti";
+//     }
+// })
+
+// Counting exercise
+
+var array = [
+  1,
+  125,
+  -452,
+  658,
+  324,
+  10800,
+  -256,
+  345,
+  13,
+  22,
+  1356,
+  -589,
+  755,
+  698,
+  2258,
+  -654,
+  3500,
+  -2647,
+  258
+
+];
+let sum = 0;
+// var sum = array.reduce(function(a, b){
+//   return a + b;
+// }, 0);
+
+// console.log(sum);
+
+for (let i = 0; i< array.length; i++){
+  sum+= array[i];
+}
+console.log(sum);
