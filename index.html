@@ -9,6 +9,10 @@
       rel="stylesheet"
       href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/CSS/custom.css" />
   </head>
   <body>
@@ -22,15 +26,28 @@
       <button id="reset">Reset</button>
       <div class="table-button">
         <!-- <input type="button" id="tableToggle" value="Rodyti"> -->
-      <button id="tableToggle">Rodyti</button>
+        <h2>Lenteles duomenys</h2>
+        <button id="tableToggle">Rodyti</button>
       </div>
       <table
         id="asmenineInfo"
         class="display table-margin"
         width="100%"
       ></table>
-      <h1>Siandienos Data</h1>
+      <h3>Siandienos Data</h3>
       <p id="data"></p>
+      <h4>Skaiciavimas</h4>
+      <button id="skaiciavimas">Rezultatas</button>
+      <div id="rezultatas"></div>
+      <select id="options">
+        <option value="saldytuvas">saldytuvas</option>
+        <option value="kompiuteris">kompiuteris</option>
+        <option value="skalbimoMasina">skalbimo masina</option>
+        <option value="dujineVirykle">dujine virykle</option>
+        <option value="mikrobanguKrosnele">mikrobangu krosnele</option>
+        <option value="indaplove">indaplove</option>
+      </select>
+      <button id="tikrinti">Tikrinti</button>
     </div>
 
     <script

@@ -113,7 +113,6 @@ $(document).ready(function () {
 // switch example start
 let day = "Saturday";
 switch (new Date().getDay()) {
-
   case 0:
     day = "Monday";
     break;
@@ -130,12 +129,11 @@ switch (new Date().getDay()) {
     day = "Friday";
     break;
   default:
-    day = "Weekend baby!"
+    day = "Weekend baby!";
 }
 document.getElementById("data").innerHTML = "Today is " + day;
 
 // switch example end
-
 
 // Table on click JS start
 
@@ -164,29 +162,11 @@ document.getElementById("tableToggle").onclick = function () {
 //     }
 // })
 
-// Counting exercise
+// Counting exercise start
 
 var array = [
-  1,
-  125,
-  -452,
-  658,
-  324,
-  10800,
-  -256,
-  345,
-  13,
-  22,
-  1356,
-  -589,
-  755,
-  698,
-  2258,
-  -654,
-  3500,
-  -2647,
-  258
-
+  1, 125, -452, 658, 324, 10800, -256, 345, 13, 22, 1356, -589, 755, 698, 2258,
+  -654, 3500, -2647, 258,
 ];
 let sum = 0;
 // var sum = array.reduce(function(a, b){
@@ -195,7 +175,44 @@ let sum = 0;
 
 // console.log(sum);
 
-for (let i = 0; i< array.length; i++){
-  sum+= array[i];
+for (let i = 0; i < array.length; i++) {
+  sum += array[i];
+  document.getElementById("skaiciavimas").onclick = function () {
+    document.getElementById("rezultatas").innerText = "Rezultatas yra: " + sum;
+  };
 }
+
 console.log(sum);
+
+// Counting exercise end
+
+// Checking value using switch exercise start
+
+var pasirinkimas = document.getElementById("options");
+var preke = pasirinkimas.options[pasirinkimas.selectedIndex].value;
+
+switch (preke) {
+  case "saldytuvas":
+    preke = 1;
+    break;
+  case "kompiuteris":
+    preke = 2;
+    break;
+  case "skalbimoMasina":
+    preke = 3;
+    break;
+  case "dujineVirykle":
+    preke = 4;
+    break;
+  case "mikrobanguKrosnele":
+    preke = 5;
+    break;
+  case "indaplove":
+    preke = 6;
+    break;
+
+}
+document.getElementById("tikrinti").onclick = function () {
+  document.getElementById("rezultatas").innerHTML = "Sandelyje yra: " + preke;
+};
+// Checking value using switch exercise end

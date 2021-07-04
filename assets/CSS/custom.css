@@ -1,10 +1,18 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+#messages {
+    margin-bottom: 1rem;
+}
 .error {
     border: 1px solid red;
 }
-.dataTables_wrapper {
-    margin-top: 50px;
+.dataTables_wrapper, .table-button   {
+    margin-top: 3rem;
 }
 #siteWrapper {
+    padding: 3rem 1rem 3rem 1rem;
     height: 100vh;
 }
 #asmenineInfo_wrapper {
@@ -13,6 +21,6 @@
 #asmenineInfo_wrapper.open {
     display: block;
 }
-.table-button {
-    margin-top: 50px;
+#rezultatas, #options {
+    margin-top: 1rem;
 }
