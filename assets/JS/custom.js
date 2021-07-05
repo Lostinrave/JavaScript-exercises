@@ -213,6 +213,6 @@ switch (preke) {
 
 }
 document.getElementById("tikrinti").onclick = function () {
-  document.getElementById("rezultatas").innerHTML = "Sandelyje yra: " + preke;
+  document.getElementById("sandelis").innerHTML = "Sandelyje yra: " + preke;
 };
 // Checking value using switch exercise end
