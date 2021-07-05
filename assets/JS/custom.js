@@ -187,32 +187,38 @@ console.log(sum);
 // Counting exercise end
 
 // Checking value using switch exercise start
-
-var pasirinkimas = document.getElementById("options");
-var preke = pasirinkimas.options[pasirinkimas.selectedIndex].value;
-
-switch (preke) {
-  case "saldytuvas":
-    preke = 1;
-    break;
-  case "kompiuteris":
-    preke = 2;
-    break;
-  case "skalbimoMasina":
-    preke = 3;
-    break;
-  case "dujineVirykle":
-    preke = 4;
-    break;
-  case "mikrobanguKrosnele":
-    preke = 5;
-    break;
-  case "indaplove":
-    preke = 6;
-    break;
-
-}
 document.getElementById("tikrinti").onclick = function () {
+  var pasirinkimas = document.getElementById("options");
+  var preke = pasirinkimas.value;
+
+  switch (preke) {
+    case "saldytuvas":
+      preke = 1;
+      break;
+    case "kompiuteris":
+      preke = 2;
+      break;
+    case "skalbimoMasina":
+      preke = 3;
+      break;
+    case "dujineVirykle":
+      preke = 4;
+      break;
+    case "mikrobanguKrosnele":
+      preke = 5;
+      break;
+    case "indaplove":
+      preke = 6;
+      break;
+  }
+
   document.getElementById("sandelis").innerHTML = "Sandelyje yra: " + preke;
 };
 // Checking value using switch exercise end
+jQuery(document).ready(function () {
+  jQuery("#naujas-mygtukas").addClass("klase");
+  jQuery(".naujas-mygtukas").removeClass("klase");
+  jQuery(".naujas-mygtukas").click(function () {
+    alert("paspaudimas");
+  });
+});
