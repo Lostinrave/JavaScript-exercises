@@ -79,15 +79,15 @@ const duomenys = [
 
 // }
 
-for (let indeksas in duomenys) {
-  let eilute = "";
+// for (let indeksas in duomenys) {
+//   let eilute = "";
 
-  for (let tekstas in duomenys[indeksas]) {
-    eilute += duomenys[indeksas][tekstas] + " ";
-  }
+//   for (let tekstas in duomenys[indeksas]) {
+//     eilute += duomenys[indeksas][tekstas] + " ";
+//   }
 
-  console.log(eilute);
-}
+//   console.log(eilute);
+// }
 // Console log duomenu atvaizdavimo pabaiga
 
 // Easy jquery table log print start
@@ -187,38 +187,59 @@ console.log(sum);
 // Counting exercise end
 
 // Checking value using switch exercise start
-document.getElementById("tikrinti").onclick = function () {
-  var pasirinkimas = document.getElementById("options");
-  var preke = pasirinkimas.value;
+// document.getElementById("tikrinti").onclick = function () {
+//   var pasirinkimas = document.getElementById("options");
+//   var preke = pasirinkimas.value;
 
-  switch (preke) {
-    case "saldytuvas":
-      preke = 1;
-      break;
-    case "kompiuteris":
-      preke = 2;
-      break;
-    case "skalbimoMasina":
-      preke = 3;
-      break;
-    case "dujineVirykle":
-      preke = 4;
-      break;
-    case "mikrobanguKrosnele":
-      preke = 5;
-      break;
-    case "indaplove":
-      preke = 6;
-      break;
-  }
+//   switch (preke) {
+//     case "saldytuvas":
+//       preke = 1;
+//       break;
+//     case "kompiuteris":
+//       preke = 2;
+//       break;
+//     case "skalbimoMasina":
+//       preke = 3;
+//       break;
+//     case "dujineVirykle":
+//       preke = 4;
+//       break;
+//     case "mikrobanguKrosnele":
+//       preke = 5;
+//       break;
+//     case "indaplove":
+//       preke = 6;
+//       break;
+//   }
 
-  document.getElementById("sandelis").innerHTML = "Sandelyje yra: " + preke;
-};
+//   document.getElementById("sandelis").innerHTML = "Sandelyje yra: " + preke;
+// };
 // Checking value using switch exercise end
+
+//syntax exercises
 jQuery(document).ready(function () {
   jQuery("#naujas-mygtukas").addClass("klase");
   jQuery(".naujas-mygtukas").removeClass("klase");
   jQuery(".naujas-mygtukas").click(function () {
     alert("paspaudimas");
+  });
+});
+
+//jQuery instead of switch
+jQuery(document).ready(function () {
+  jQuery("#options").on("change", function () {
+    var preke = jQuery(this).children("option:selected").val();
+    jQuery("#sandelis").text("Sandelyje yra: "+ preke);
+  });
+});
+
+// jQuery array exercises
+
+jQuery(document).ready(function(){
+  jQuery(duomenys).each(function(indekas, reiksme ){
+    jQuery(reiksme).each(function(indeksas,reiksme){
+      console.log(reiksme['vardas']);
+    });
+    
   });
 });
