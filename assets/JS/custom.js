@@ -66,8 +66,8 @@ const duomenys = [
   },
 ];
 
-duomenys[0]['pavarde'] = 'Adomaitis';
-duomenys[2]['vardas'] = 'Egle';
+duomenys[0]["pavarde"] = "Adomaitis";
+duomenys[2]["vardas"] = "Egle";
 console.log(duomenys);
 // for(let eile in duomenys){
 //     console.log(duomenys[eile]['vardas']);
@@ -226,23 +226,78 @@ jQuery(document).ready(function () {
   jQuery(".naujas-mygtukas").click(function () {
     alert("paspaudimas");
   });
-});
 
-//jQuery instead of switch
-jQuery(document).ready(function () {
+  //jQuery instead of switch
+
   jQuery("#options").on("change", function () {
     var preke = jQuery(this).children("option:selected").val();
-    jQuery("#sandelis").text("Sandelyje yra: "+ preke);
+    jQuery("#sandelis").text("Sandelyje yra: " + preke);
   });
-});
 
-// jQuery array exercises
+  // jQuery array exercises
+  var tbody = $("#jLentele tbody"),
+    reiksmes = ["vardas", "pavarde", "gimtadienis", "lytis"];
 
-jQuery(document).ready(function(){
-  jQuery(duomenys).each(function(indekas, reiksme ){
-    jQuery(reiksme).each(function(indeksas,reiksme){
-      console.log(reiksme['vardas']);
+  jQuery(duomenys).each(function (indeksas, reiksme) {
+    var tr = jQuery("<tr>");
+    jQuery(reiksmes).each(function (indeksas, kintamas) {
+      jQuery("<td>").html(reiksme[kintamas]).appendTo(tr);
     });
-    
+    tbody.append(tr);
+  });
+
+  // array/table exercises
+
+  const imones = [
+    {
+      Klientas: "Adomaviciaus imone",
+      Kodas: "1000",
+      Data: "2020.06.20",
+      Produktas: "nesiojamas kompiuteris",
+      Kaina: "1499",
+      Papildoma_informacija: " ",
+    },
+
+    {
+      Klientas: "UAB Kesko Senukai",
+      Kodas: "1001",
+      Data: "2020.06.21",
+      Produktas: "televizorius",
+      Kaina: "800",
+      Papildoma_informacija: "Reikalingas pristatymas",
+    },
+    {
+      Klientas: "UAB Simplea",
+      Kodas: "1003",
+      Data: "2020.06.23",
+      Produktas: "telefonas",
+      Kaina: "299",
+      Papildoma_informacija: " ",
+    },
+    {
+      Klientas: "UAB 5 kontinentai",
+      Kodas: "1004",
+      Data: "2020.06.24",
+      Produktas: "plansete",
+      Kaina: "450",
+      Papildoma_informacija: " ",
+    },
+  ];
+  var tablebody = $("#jTable tbody"),
+    values = [
+      "Klientas",
+      "Kodas",
+      "Data",
+      "Produktas",
+      "Kaina",
+      "Papildoma_informacija",
+    ];
+
+  jQuery(imones).each(function (i, r) {
+    var tablerow = jQuery("<tr>");
+    jQuery(values).each(function (i, k) {
+      jQuery("<td>").html(r[k]).appendTo(tablerow);
+    });
+    tablebody.append(tablerow);
   });
 });

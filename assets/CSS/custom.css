@@ -1,28 +1,41 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
-#messages {
-    margin-bottom: 1rem;
+#messages,
+#sandelis,
+#jLentele {
+  margin-bottom: 1rem;
 }
 .error {
-    border: 1px solid red;
+  border: 1px solid red;
 }
-.dataTables_wrapper, .table-button   {
-    margin-top: 3rem;
+.dataTables_wrapper,
+.table-button {
+  margin-top: 3rem;
 }
 #siteWrapper {
-    padding: 0 1rem 0 1rem;
-    height: 100vh;
+  padding: 0 1rem 0 1rem;
+  height: 100vh;
 }
 #asmenineInfo_wrapper {
-    display: none;
+  display: none;
 }
 #asmenineInfo_wrapper.open {
-    display: block;
+  display: block;
 }
-#rezultatas, #options, #sandelis {
-    margin-top: 1rem;
+#rezultatas,
+#options,
+#sandelis {
+  margin-top: 1rem;
 }
+.lentelesStilius th,
+td {
+  text-align: center;
+  border: 1px solid grey;
+  box-shadow: 0px 2px 30px -5px grey;
+  padding: 1rem;
+}
+
