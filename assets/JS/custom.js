@@ -66,6 +66,9 @@ const duomenys = [
   },
 ];
 
+duomenys[0]['pavarde'] = 'Adomaitis';
+duomenys[2]['vardas'] = 'Egle';
+console.log(duomenys);
 // for(let eile in duomenys){
 //     console.log(duomenys[eile]['vardas']);
 //     console.log(duomenys[eile]['pavarde']);
