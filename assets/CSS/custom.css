@@ -6,7 +6,8 @@ body {
 }
 #messages,
 #sandelis,
-#jLentele {
+#jLentele
+ {
   margin-bottom: 1rem;
 }
 .error {
@@ -28,7 +29,8 @@ body {
 }
 #rezultatas,
 #options,
-#sandelis {
+#sandelis,
+#jTable {
   margin-top: 1rem;
 }
 .lentelesStilius th,
