@@ -301,3 +301,76 @@ jQuery(document).ready(function () {
     tablebody.append(tablerow);
   });
 });
+
+// Class work 2021 07 15
+// 1st exercise
+var vardas = 'Petras',
+    pavarde = 'Petraitis',
+    gimimoData = '1992 07 20';
+
+document.getElementById('javascript-testai').innerHTML='Aš esu ' + vardas + ' ' + pavarde + ' ' + 'gimęs ' + gimimoData;
+
+// 2nd exercise
+
+var number = '2.5';
+
+document.getElementById('math').onclick= function (){
+  document.getElementById('mathResult').innerText =Math.ceil(number);
+};
+
+// 3rd/4th exercise
+
+
+function randomSkaicius(min, max) { 
+  return Math.floor(Math.random() * (max - min + 1) + min)
+  
+}
+let value1st = randomSkaicius(0,4),
+    value2nd = randomSkaicius(0,4),
+    divide = value1st/value2nd;
+    console.log(divide);
+    if (value2nd == 0){
+      console.log('Cannot divide by zero')
+    }
+
+// 5th exercise
+let value3rd = randomSkaicius(0,25),
+    value4th = randomSkaicius(0,25),
+    value5th = randomSkaicius(0,25),
+    lowest = Math.min(value3rd,value4th,value5th),
+    highest = Math.max(value3rd,value4th,value5th),
+    avg = (lowest + highest) / 2;
+    console.log(avg);
+// 6th exercise
+
+let randomGen = Math.random() * 10;
+document.getElementById('math6th').onclick= function (){
+  document.getElementById('mathResult6th').innerText =Math.ceil(randomGen);
+};
+
+// 7th exercise
+
+let value7th = randomSkaicius(-10,10),
+    value8th = randomSkaicius(-10,10),
+    value9th = randomSkaicius(-10,10),
+    // function addIntegers(){
+    //   var sum = value7th + value8th + value9th;
+    //   var displayResult = document.getElementById('mathResult7th');
+    //   displayResult.innerHTML = sum;
+    //   if(sum<0){
+    //     displayResult.style.css = 'red';
+    //   }
+    // }
+    sumVal = value7th + value8th + value9th;
+    console.log(sumVal);
+    // if (sum<0) {
+    //   $(value7th, value8th, value9th).css('color', 'red');
+    // }
+    // if ( value7th == 0 && value8th == 0 && value9th == 0 ) {
+    //   color: 'blue';
+    // }
+    // if ( value7th > 0 && value8th > 0 && value9th > 0 ) {
+    //   color: 'green';
+    // }
+    // document.getElementById('mathResult7th').innerHTML = value7th;
+

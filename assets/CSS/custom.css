@@ -6,7 +6,11 @@ body {
 }
 #messages,
 #sandelis,
-#jLentele
+#jLentele,
+#javascript-testai,
+#mathResult,
+#math6th,
+#mathResult6th
  {
   margin-bottom: 1rem;
 }
@@ -30,7 +34,11 @@ body {
 #rezultatas,
 #options,
 #sandelis,
-#jTable {
+#jTable,
+#javascript-testai,
+#mathResult,
+#math6th,
+#mathResult6th {
   margin-top: 1rem;
 }
 .lentelesStilius th,
