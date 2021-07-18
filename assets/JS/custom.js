@@ -361,12 +361,21 @@ document.getElementById("math6th").onclick = function () {
 let value7th = randomSkaicius(-10, 10),
   value8th = randomSkaicius(-10, 10),
   value9th = randomSkaicius(-10, 10),
+  button5th = document.getElementById("math7th"),
+  button6th = document.getElementById("math8th"),
+  button7th = document.getElementById("math9th"),
   result7th = document.getElementById("mathResult7th"),
   result8th = document.getElementById("mathResult8th"),
   result9th = document.getElementById("mathResult9th");
-result7th.innerHTML = "Result: " + value7th;
-result8th.innerHTML = "Result: " + value8th;
-result9th.innerHTML = "Result: " + value9th;
+  button5th.onclick = function(){
+    result7th.innerHTML = "Result: " + value7th;
+  }
+  button6th.onclick = function(){
+    result8th.innerHTML = "Result: " + value8th;
+  }
+  button7th.onclick = function(){
+    result9th.innerHTML = "Result: " + value9th;
+  }
 if (value7th < 0) {
   result7th.style.color = "red";
 }
@@ -393,6 +402,7 @@ if (value9th == 0) {
 let value10th = randomSkaicius(5, 3000),
   price = 1,
   // decimalPrice = Math.round(value10th * price *100)/100;
+  button8th = document.getElementById("math10th"),
   result10th = document.getElementById("mathResult10th");
 
 if (value10th > 1000) {
@@ -401,7 +411,9 @@ if (value10th > 1000) {
 if (value10th > 2000) {
   price = 0.96;
 }
-result10th.innerHTML = "Order: " + value10th + " Price: " + (value10th * price)*100/100;
+button8th.onclick = function () { 
+  result10th.innerHTML = "Order: " + value10th + " Price: " + (value10th * price)*100/100;
+ }
 
 // 9th exercise
 
