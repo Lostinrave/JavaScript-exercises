@@ -3,16 +3,39 @@ body {
   font-size: 16px;
   padding-top: 50px;
   padding-bottom: 50px;
+  height: 10000px;
 }
+.window-percent {
+  z-index: 1000;
+  position: fixed;
+  top: 50px;
+  right: 0;
+  color: darkgoldenrod;
+  font-size: 35px;
+}
+
 #messages,
 #sandelis,
 #jLentele,
+#math2nd,
+#mathResult2nd,
+#mathResult6th,
+#math5th,
+#mathResult5th,
+#rezultatas,
+#options,
+#jTable,
+#javascriptTest,
 #javascript-testai,
-#mathResult,
+#math4th,
+#mathResult4th,
 #math6th,
-#mathResult6th
- {
+#mathResult7th,
+#mathResult8th,
+#mathResult9th,
+#mathResult10th {
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 .error {
   border: 1px solid red;
@@ -48,4 +71,3 @@ td {
   box-shadow: 0px 2px 30px -5px grey;
   padding: 1rem;
 }
-
