@@ -392,6 +392,7 @@ if (value9th == 0) {
 
 let value10th = randomSkaicius(5, 3000),
   price = 1,
+  // decimalPrice = Math.round(value10th * price *100)/100;
   result10th = document.getElementById("mathResult10th");
 
 if (value10th > 1000) {
@@ -400,7 +401,7 @@ if (value10th > 1000) {
 if (value10th > 2000) {
   price = 0.96;
 }
-result10th.innerHTML = "Order: " + value10th + " Price: " + value10th * price;
+result10th.innerHTML = "Order: " + value10th + " Price: " + (value10th * price)*100/100;
 
 // 9th exercise
 
@@ -408,5 +409,5 @@ $(window).scroll(function () {
   var scrollPercent =
     (100 * $(window).scrollTop()) / ($(document).height() - $(window).height());
   console.log(scrollPercent);
-  $('.window-percent').html(scrollPercent );
+  $('.window-percent').html(Math.round(scrollPercent * 100 )/100);
 });
