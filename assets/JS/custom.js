@@ -325,17 +325,16 @@ document.getElementById("math2nd").onclick = function () {
 function randomSkaicius(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-let value1st = randomSkaicius(0, 4),
-  value2nd = randomSkaicius(0, 4),
-  result4th = document.getElementById("mathResult4th"),
-  button4th = document.getElementById("math4th"),
-  divide = value1st / value2nd;
-  button4th.onclick = function () {
-    if (value2nd == 0) {
+ let result4th = document.getElementById("mathResult4th"),
+  button4th = document.getElementById("math4th");
+  button4th.addEventListener('click',test);
+  function test() {
+    let value1st = randomSkaicius(0, 4),
+    value2nd = randomSkaicius(0, 4);
+    if (value2nd == 0)
       result4th.innerHTML = "Cannot divide by zero";
-    }
     else
-    result4th.innerHTML = Math.floor(divide);
+      result4th.innerHTML = Math.floor(value1st / value2nd);
 };
 
 
