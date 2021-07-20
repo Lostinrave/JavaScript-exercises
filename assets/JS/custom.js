@@ -327,8 +327,8 @@ function randomSkaicius(min, max) {
 }
  let result4th = document.getElementById("mathResult4th"),
   button4th = document.getElementById("math4th");
-  button4th.addEventListener('click',test);
-  function test() {
+  button4th.addEventListener('click', divide);
+  function divide() {
     let value1st = randomSkaicius(0, 4),
     value2nd = randomSkaicius(0, 4);
     if (value2nd == 0)
@@ -339,69 +339,80 @@ function randomSkaicius(min, max) {
 
 
 // 5th exercise
-let value3rd = randomSkaicius(0, 25),
-  value4th = randomSkaicius(0, 25),
-  value5th = randomSkaicius(0, 25),
-  lowest = Math.min(value3rd, value4th, value5th),
-  highest = Math.max(value3rd, value4th, value5th),
-  avg = (lowest + highest) / 2;
-  document.getElementById("math5th").onclick = function () {
-    document.getElementById("mathResult5th").innerHTML = avg;
-  };
+
+let button5th = document.getElementById("math5th"),
+  result5th = document.getElementById("mathResult5th");
+  button5th.addEventListener('click', avg);
+  function avg(){
+    let value3rd = randomSkaicius(0, 25),
+    value4th = randomSkaicius(0, 25),
+    value5th = randomSkaicius(0, 25),
+    lowest = Math.min(value3rd, value4th, value5th),
+    highest = Math.max(value3rd, value4th, value5th);
+    result5th.innerHTML = (lowest + highest) / 2;
+  }
+
 // 6th exercise
 
-let randomGen = Math.random() * 10;
-document.getElementById("math6th").onclick = function () {
+
+document.getElementById("math6th").addEventListener('click', random);
+function random () {
+  let randomGen = Math.random() * 10;
   document.getElementById("mathResult6th").innerHTML = Math.ceil(randomGen);
 };
 
 // 7th exercise
 
-let value7th = randomSkaicius(-10, 10),
-  value8th = randomSkaicius(-10, 10),
-  value9th = randomSkaicius(-10, 10),
-  button5th = document.getElementById("math7th"),
-  button6th = document.getElementById("math8th"),
-  button7th = document.getElementById("math9th"),
+
+  button6th = document.getElementById("math7th"),
+  button7th = document.getElementById("math8th"),
+  button8th = document.getElementById("math9th"),
   result7th = document.getElementById("mathResult7th"),
   result8th = document.getElementById("mathResult8th"),
   result9th = document.getElementById("mathResult9th");
-  button5th.onclick = function(){
+  button6th.addEventListener('click', colors);
+  button7th.addEventListener('click', colors);
+  button8th.addEventListener('click', colors);
+  function colors (){
+    let value7th = randomSkaicius(-10, 10),
+  value8th = randomSkaicius(-10, 10),
+  value9th = randomSkaicius(-10, 10);
     result7th.innerHTML = "Result: " + value7th;
-  }
-  button6th.onclick = function(){
     result8th.innerHTML = "Result: " + value8th;
-  }
-  button7th.onclick = function(){
     result9th.innerHTML = "Result: " + value9th;
+  // }
+  // button7th.onclick = function(){
+
+  // }
+  // button8th.onclick = function(){
+    if (value7th < 0) {
+      result7th.style.color = "red";
+    }
+    if (value7th == 0) {
+      result7th.style.color = "blue";
+    } else if (value7th > 0) result7th.style.color = "green";
+    
+    if (value8th < 0) {
+      result8th.style.color = "red";
+    }
+    if (value8th == 0) {
+      result8th.style.color = "blue";
+    } else if (value8th > 0) result8th.style.color = "green";
+    
+    if (value9th < 0) {
+      result9th.style.color = "red";
+    }
+    if (value9th == 0) {
+      result9th.style.color = "blue";
+    } else if (value9th > 0) result9th.style.color = "green";
+    
   }
-if (value7th < 0) {
-  result7th.style.color = "red";
-}
-if (value7th == 0) {
-  result7th.style.color = "blue";
-} else if (value7th > 0) result7th.style.color = "green";
-
-if (value8th < 0) {
-  result8th.style.color = "red";
-}
-if (value8th == 0) {
-  result8th.style.color = "blue";
-} else if (value8th > 0) result8th.style.color = "green";
-
-if (value9th < 0) {
-  result9th.style.color = "red";
-}
-if (value9th == 0) {
-  result9th.style.color = "blue";
-} else if (value9th > 0) result9th.style.color = "green";
-
 // 8th exercise
 
 let value10th = randomSkaicius(5, 3000),
   price = 1,
   // decimalPrice = Math.round(value10th * price *100)/100;
-  button8th = document.getElementById("math10th"),
+  button9th = document.getElementById("math10th"),
   result10th = document.getElementById("mathResult10th");
 
 if (value10th > 1000) {
@@ -410,9 +421,9 @@ if (value10th > 1000) {
 if (value10th > 2000) {
   price = 0.96;
 }
-button8th.onclick = function () { 
+button9th.onclick = function () { 
   result10th.innerHTML = "Order: " + value10th + " Price: " + (value10th * price)*100/100;
- }
+  }
 
 // 9th exercise
 
@@ -422,3 +433,36 @@ $(window).scroll(function () {
   console.log(scrollPercent);
   $('.window-percent').html(Math.round(scrollPercent * 100 )/100);
 });
+
+// 2021 07 20 classwork task (game)
+// 1st exercise
+// let i = 0; nusako kintamaji kurio reiksme lygi 0
+// i < 400; nusako iki kokios kondicijos ciklas nutruks
+// i++; pridedamas 1 skaicius ciklo pabaigoje
+let stars = '*',
+    starsPar = document.getElementById('stars'),
+    line = '',
+    lineBreak = 0; // antrasis skaiciavimo elementas (counter), skirtas apskaiciuoti 50 riba
+  for (let i = 0; i < 400; i++){  
+    if (lineBreak == 50){ // jeigu kintamasis(counteris) pasiekia riba 50
+      line += '<br />'; // kintamasis prisideda html elementa
+      lineBreak = 0; // kintamasis grista i pradine reiksme
+    }
+    line += stars; // kiekvieno ciklo eigoje pridedama 'stars' reiksme
+    lineBreak++; // kaip ir prie i pridedama po viena skaiciu ciklo pabaigoje
+  }
+
+starsPar.innerHTML += line;
+
+// 2nd exercise
+let numbersPar = document.getElementById('randomNumbers'),
+    line2 = '',
+    randomNumber = 0;
+    for(let j = 0; j <= 300; j++){
+      randomNumber = randomSkaicius(0,300);
+      if(randomNumber > 150){
+        randomNumber.fontcolor('red');
+      }
+      line2 += randomNumber + '&nbsp';
+    }
+numbersPar.innerHTML += line2;
