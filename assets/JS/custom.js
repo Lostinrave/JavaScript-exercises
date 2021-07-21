@@ -457,12 +457,57 @@ starsPar.innerHTML += line;
 // 2nd exercise
 let numbersPar = document.getElementById('randomNumbers'),
     line2 = '',
+    higher = 0;
     randomNumber = 0;
-    for(let j = 0; j <= 300; j++){
+    for(let i = 0; i < 300; i++){
       randomNumber = randomSkaicius(0,300);
       if(randomNumber > 150){
-        randomNumber.fontcolor('red');
+        higher++;
       }
-      line2 += randomNumber + '&nbsp';
+      if(randomNumber > 275){
+        line2 += '<span style="color: red">'+randomNumber+'</span>';
+      }  
+      else {
+        line2 += randomNumber;
+      }
+      if(i!=299){
+        line2 += ', ';
+      }
+
     }
 numbersPar.innerHTML += line2;
+numbersPar.innerHTML  += '<h5>Numbers higher then 150:</h5>'+higher;
+
+// 3rd exercise
+let numbersPar2 = document.getElementById('randomNumbers2'),
+    line3 = '',
+    divider = 77,
+    number2 = 0,
+    space = ', ';
+
+    for(let i = 1; i <= 3000; i++){
+      number2 = i / divider;
+      if(Number.isInteger(number2)){
+        if (i!=divider){
+        line3 += space;
+      }
+      line3 += i;
+    }
+  }
+numbersPar2.innerHTML += line3;
+
+// 4th exercise
+let numbersPar3 = document.getElementById('randomNumbers3'),
+    squareNum = 100,
+    square = '';
+
+
+for(let i = 1; i <= (squareNum*squareNum); i++){
+    square+='*';
+
+    if(i !=1 && i%squareNum == 0){
+      square+= '<br />';
+    }
+
+}
+numbersPar3.innerHTML += square;
