@@ -706,7 +706,51 @@ exercise.innerHTML += starts;
 
 //4th exercise
 exercise.innerHTML+='<h3>Ketvirta uzduotis</h3>';
-let letters = directorName.substr(4,3)+directorSurname.substr(6,3);
-exercise.innerHTML += letters;
-    
+let initials = directorName.substr(4,3)+directorSurname.substr(6,3);
+exercise.innerHTML += initials;
+
+//5th exercise
+exercise.innerHTML+='<h3>Penkta uzduotis</h3>';
+let movie = 'Once upon a time in hollywood',
+    movieReplace = movie.replace(/O|o/g, "*");
+exercise.innerHTML += movieReplace;
+
+//6th exercise
+
+exercise.innerHTML+='<h3>Sesta uzduotis</h3>';   
+let movieSplit = movie.split(/O|o/g).length -1;
+exercise.innerHTML += movieSplit;
+
+//7th exercise
+exercise.innerHTML+='<h3>Septinta uzduotis</h3>';
+let movie1st = 'An American in Paris',
+    movie2nd = "Breakfast at Tiffany's",
+    movie3rd = '2001: A Space Odyssey',
+    movie4th = "It's a Wonderful Life";
+exercise.innerHTML += `${movie1st.replace(/[aeiou]/ig,'')}<br>`;
+exercise.innerHTML += `${movie2nd.replace(/[aeiou]/ig,'')}<br>`;
+exercise.innerHTML += `${movie3rd.replace(/[aeiou]/ig,'')}<br>`;
+exercise.innerHTML += `${movie4th.replace(/[aeiou]/ig,'')}<br>`;
+
+//8th exercise
+exercise.innerHTML+='<h3>Astunta uzduotis</h3>';
+function wordLength(str,length){
+  let strArray = str.split(' '),
+    count = 0;
+    for(let i=0; i<strArray.length; i++){
+      if(strArray[i].length<=length){
+        count++;
+      }
+    }
+    return count;
+}
+  let south = "Don't Be a Menace to South Central While Drinking Your Juice in the Hood",
+  pietus = 'Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale';
+exercise.innerHTML+=`${wordLength(south,5)}<br>${wordLength(pietus,5)}`;
+
+//Optional exercise
+
+
+
+
 
