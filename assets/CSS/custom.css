@@ -37,7 +37,11 @@ body {
 #mathResult9th,
 #math9th,
 #mathResult10th,
-#math10th {
+#math10th,
+#randomNumbers,
+#randomNumbers2,
+#randomNumbers3,
+#randomNumbers4 {
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
@@ -74,4 +78,28 @@ td {
   border: 1px solid grey;
   box-shadow: 0px 2px 30px -5px grey;
   padding: 1rem;
+}
+#randomNumbers3 {
+  line-height: 6.5px;
+}
+#randomNumbers3::before, #randomNumbers3::after{
+  content: '';
+  display: table;
+  clear: both;
+}
+#tevinis{
+  width: 500px;
+  height: 500px;
+  position: relative;
+  background-color: blueviolet;
+}
+.vaikas {
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border: 1px solid black;
+  position: absolute;
+  top: 0;
+  left: 0;
+
 }

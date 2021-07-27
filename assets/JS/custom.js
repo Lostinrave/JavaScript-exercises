@@ -307,10 +307,10 @@ jQuery(document).ready(function () {
 var vardas = "Petras",
   pavarde = "Petraitis",
   gimimoData = "1992 07 20";
-  document.getElementById("javascriptTest").onclick = function (){
-    document.getElementById("javascript-testai").innerHTML =
-  "Aš esu " + vardas + " " + pavarde + " " + "gimęs " + gimimoData;
-  }
+document.getElementById("javascriptTest").onclick = function () {
+  document.getElementById("javascript-testai").innerHTML =
+    "Aš esu " + vardas + " " + pavarde + " " + "gimęs " + gimimoData;
+};
 
 // 2nd exercise
 
@@ -325,88 +325,82 @@ document.getElementById("math2nd").onclick = function () {
 function randomSkaicius(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
- let result4th = document.getElementById("mathResult4th"),
+let result4th = document.getElementById("mathResult4th"),
   button4th = document.getElementById("math4th");
-  button4th.addEventListener('click', divide);
-  function divide() {
-    let value1st = randomSkaicius(0, 4),
+button4th.addEventListener("click", divide);
+function divide() {
+  let value1st = randomSkaicius(0, 4),
     value2nd = randomSkaicius(0, 4);
-    if (value2nd == 0)
-      result4th.innerHTML = "Cannot divide by zero";
-    else
-      result4th.innerHTML = Math.floor(value1st / value2nd);
-};
-
+  if (value2nd == 0) result4th.innerHTML = "Cannot divide by zero";
+  else result4th.innerHTML = Math.floor(value1st / value2nd);
+}
 
 // 5th exercise
 
 let button5th = document.getElementById("math5th"),
   result5th = document.getElementById("mathResult5th");
-  button5th.addEventListener('click', avg);
-  function avg(){
-    let value3rd = randomSkaicius(0, 25),
+button5th.addEventListener("click", avg);
+function avg() {
+  let value3rd = randomSkaicius(0, 25),
     value4th = randomSkaicius(0, 25),
     value5th = randomSkaicius(0, 25),
     lowest = Math.min(value3rd, value4th, value5th),
     highest = Math.max(value3rd, value4th, value5th);
-    result5th.innerHTML = (lowest + highest) / 2;
-  }
+  result5th.innerHTML = (lowest + highest) / 2;
+}
 
 // 6th exercise
 
-
-document.getElementById("math6th").addEventListener('click', random);
-function random () {
+document.getElementById("math6th").addEventListener("click", random);
+function random() {
   let randomGen = Math.random() * 10;
   document.getElementById("mathResult6th").innerHTML = Math.ceil(randomGen);
-};
+}
 
 // 7th exercise
 
-
-  button6th = document.getElementById("math7th"),
-  button7th = document.getElementById("math8th"),
-  button8th = document.getElementById("math9th"),
-  result7th = document.getElementById("mathResult7th"),
-  result8th = document.getElementById("mathResult8th"),
-  result9th = document.getElementById("mathResult9th");
-  button6th.addEventListener('click', colors);
-  button7th.addEventListener('click', colors);
-  button8th.addEventListener('click', colors);
-  function colors (){
-    let value7th = randomSkaicius(-10, 10),
-  value8th = randomSkaicius(-10, 10),
-  value9th = randomSkaicius(-10, 10);
-    result7th.innerHTML = "Result: " + value7th;
-    result8th.innerHTML = "Result: " + value8th;
-    result9th.innerHTML = "Result: " + value9th;
+(button6th = document.getElementById("math7th")),
+  (button7th = document.getElementById("math8th")),
+  (button8th = document.getElementById("math9th")),
+  (result7th = document.getElementById("mathResult7th")),
+  (result8th = document.getElementById("mathResult8th")),
+  (result9th = document.getElementById("mathResult9th"));
+button6th.addEventListener("click", colors);
+button7th.addEventListener("click", colors);
+button8th.addEventListener("click", colors);
+function colors() {
+  let value7th = randomSkaicius(-10, 10),
+    value8th = randomSkaicius(-10, 10),
+    value9th = randomSkaicius(-10, 10);
+  result7th.innerHTML = "Result: " + value7th;
+  result8th.innerHTML = "Result: " + value8th;
+  result9th.innerHTML = "Result: " + value9th;
   // }
   // button7th.onclick = function(){
 
   // }
   // button8th.onclick = function(){
-    if (value7th < 0) {
-      result7th.style.color = "red";
-    }
-    if (value7th == 0) {
-      result7th.style.color = "blue";
-    } else if (value7th > 0) result7th.style.color = "green";
-    
-    if (value8th < 0) {
-      result8th.style.color = "red";
-    }
-    if (value8th == 0) {
-      result8th.style.color = "blue";
-    } else if (value8th > 0) result8th.style.color = "green";
-    
-    if (value9th < 0) {
-      result9th.style.color = "red";
-    }
-    if (value9th == 0) {
-      result9th.style.color = "blue";
-    } else if (value9th > 0) result9th.style.color = "green";
-    
+  if (value7th < 0) {
+    result7th.style.color = "red";
   }
+  if (value7th == 0) {
+    result7th.style.color = "blue";
+  } else if (value7th > 0) result7th.style.color = "green";
+
+  if (value8th < 0) {
+    result8th.style.color = "red";
+  }
+  if (value8th == 0) {
+    result8th.style.color = "blue";
+  } else if (value8th > 0) result8th.style.color = "green";
+
+  if (value9th < 0) {
+    result9th.style.color = "red";
+  }
+  if (value9th == 0) {
+    result9th.style.color = "blue";
+  } else if (value9th > 0) result9th.style.color = "green";
+}
 // 8th exercise
 
 let value10th = randomSkaicius(5, 3000),
@@ -421,9 +415,10 @@ if (value10th > 1000) {
 if (value10th > 2000) {
   price = 0.96;
 }
-button9th.onclick = function () { 
-  result10th.innerHTML = "Order: " + value10th + " Price: " + (value10th * price)*100/100;
-  }
+button9th.onclick = function () {
+  result10th.innerHTML =
+    "Order: " + value10th + " Price: " + (value10th * price * 100) / 100;
+};
 
 // 9th exercise
 
@@ -431,7 +426,7 @@ $(window).scroll(function () {
   var scrollPercent =
     (100 * $(window).scrollTop()) / ($(document).height() - $(window).height());
   console.log(scrollPercent);
-  $('.window-percent').html(Math.round(scrollPercent * 100 )/100);
+  $(".window-percent").html(Math.round(scrollPercent * 100) / 100);
 });
 
 // 2021 07 20 classwork task (game)
@@ -439,75 +434,279 @@ $(window).scroll(function () {
 // let i = 0; nusako kintamaji kurio reiksme lygi 0
 // i < 400; nusako iki kokios kondicijos ciklas nutruks
 // i++; pridedamas 1 skaicius ciklo pabaigoje
-let stars = '*',
-    starsPar = document.getElementById('stars'),
-    line = '',
-    lineBreak = 0; // antrasis skaiciavimo elementas (counter), skirtas apskaiciuoti 50 riba
-  for (let i = 0; i < 400; i++){  
-    if (lineBreak == 50){ // jeigu kintamasis(counteris) pasiekia riba 50
-      line += '<br />'; // kintamasis prisideda html elementa
-      lineBreak = 0; // kintamasis grista i pradine reiksme
-    }
-    line += stars; // kiekvieno ciklo eigoje pridedama 'stars' reiksme
-    lineBreak++; // kaip ir prie i pridedama po viena skaiciu ciklo pabaigoje
+let stars = "*",
+  starsPar = document.getElementById("stars"),
+  line = "",
+  lineBreak = 0; // antrasis skaiciavimo elementas (counter), skirtas apskaiciuoti 50 riba
+for (let i = 0; i < 400; i++) {
+  if (lineBreak == 50) {
+    // jeigu kintamasis(counteris) pasiekia riba 50
+    line += "<br />"; // kintamasis prisideda html elementa
+    lineBreak = 0; // kintamasis grista i pradine reiksme
   }
+  line += stars; // kiekvieno ciklo eigoje pridedama 'stars' reiksme
+  lineBreak++; // kaip ir prie i pridedama po viena skaiciu ciklo pabaigoje
+}
 
 starsPar.innerHTML += line;
 
 // 2nd exercise
-let numbersPar = document.getElementById('randomNumbers'),
-    line2 = '',
-    higher = 0;
-    randomNumber = 0;
-    for(let i = 0; i < 300; i++){
-      randomNumber = randomSkaicius(0,300);
-      if(randomNumber > 150){
-        higher++;
-      }
-      if(randomNumber > 275){
-        line2 += '<span style="color: red">'+randomNumber+'</span>';
-      }  
-      else {
-        line2 += randomNumber;
-      }
-      if(i!=299){
-        line2 += ', ';
-      }
-
-    }
+let numbersPar = document.getElementById("randomNumbers"),
+  line2 = "",
+  higher = 0;
+randomNumber = 0;
+for (let i = 0; i < 300; i++) {
+  randomNumber = randomSkaicius(0, 300);
+  if (randomNumber > 150) {
+    higher++;
+  }
+  if (randomNumber > 275) {
+    line2 += '<span style="color: red">' + randomNumber + "</span>";
+  } else {
+    line2 += randomNumber;
+  }
+  if (i != 299) {
+    line2 += ", ";
+  }
+}
 numbersPar.innerHTML += line2;
-numbersPar.innerHTML  += '<h5>Numbers higher then 150:</h5>'+higher;
+numbersPar.innerHTML += "<h5>Numbers higher then 150:</h5>" + higher;
 
 // 3rd exercise
-let numbersPar2 = document.getElementById('randomNumbers2'),
-    line3 = '',
-    divider = 77,
-    number2 = 0,
-    space = ', ';
+let numbersPar2 = document.getElementById("randomNumbers2"),
+  line3 = "",
+  divider = 77,
+  number2 = 0,
+  space = ", ";
 
-    for(let i = 1; i <= 3000; i++){
-      number2 = i / divider;
-      if(Number.isInteger(number2)){
-        if (i!=divider){
-        line3 += space;
-      }
-      line3 += i;
+for (let i = 1; i <= 3000; i++) {
+  number2 = i / divider;
+  if (Number.isInteger(number2)) {
+    if (i != divider) {
+      line3 += space;
     }
+    line3 += i;
   }
+}
 numbersPar2.innerHTML += line3;
 
 // 4th exercise
-let numbersPar3 = document.getElementById('randomNumbers3'),
-    squareNum = 100,
-    square = '';
+// let
+//     squareNum = 100,
+//     square = '';
 
+// for(let i = 1; i <= (squareNum*squareNum); i++){
+//     square+='*';
 
-for(let i = 1; i <= (squareNum*squareNum); i++){
-    square+='*';
+//     if(i !=1 && i%squareNum == 0){
+//       square+= '<br />';
+//     }
 
-    if(i !=1 && i%squareNum == 0){
-      square+= '<br />';
+// }
+
+let square = "",
+  numbersPar3 = document.getElementById("randomNumbers3");
+
+for (let i = 0; i < 100; i++) {
+  for (let j = 0; j < 100; j++) {
+    if (i == j || 99 - i == j) {
+      square += '<span style = "color:red";>*</span>';
+    } else {
+      square += "*";
     }
-
+  }
+  square += "<br>";
 }
 numbersPar3.innerHTML += square;
+
+//5th exercise
+let numbersPar4 = document.getElementById("randomNumbers4"),
+  winner = "",
+  winnerValue = 222;
+(benas = 0), (jovita = 0), (ended = false);
+for (let i = 0; i <= 100; i++) {
+  if (ended) break;
+  let bscore = randomSkaicius(10, 20),
+    jscore = randomSkaicius(5, 25);
+  if (bscore == 12 || jscore == 12) {
+    numbersPar4.innerHTML +=
+      i + 1 + " Partija negalima, iskrito: 12 " + "<br />";
+    continue;
+  }
+  benas += bscore;
+  jovita += jscore;
+  numbersPar4.innerHTML +=
+    i +
+    1 +
+    " Partija, Beno taskai: " +
+    bscore +
+    " Jovitos taskai: " +
+    jscore +
+    "<br />";
+  if (benas >= winnerValue || jovita >= winnerValue) {
+    ended = true;
+    if (benas >= winnerValue) {
+      winner = "Benas";
+    } else {
+      winner = "Jovita";
+    }
+    numbersPar4.innerHTML +=
+      "Benas: " + benas + " Jovita: " + jovita + " Zaidima Laimejo: " + winner;
+  }
+}
+
+//6th exercise penkiuose cikluose reikia pasiekti 85 ir sustabdyti cikla
+
+
+let kalimas = 1,
+    smugis = 1;
+    vinys = document.getElementById('vinys');
+
+for (let i=1; i<6; i++){
+  for (let k = randomSkaicius(5,20);k<85;k+=randomSkaicius(5,20)){
+    smugis++;
+  }
+  vinys.innerHTML+=`${kalimas} vinis ikalta ${smugis} smugiais; <br />`;
+  smugis = 0;
+  kalimas++;
+}
+
+let miss = 0,
+    nepataikyta = 0;
+
+for (let i=1; i<6; i++){
+  for (let k = randomSkaicius(20,30);k<85;k+=randomSkaicius(20,30)){
+    smugis++;
+    miss = randomSkaicius(1,2);
+    if (miss === 2)
+    nepataikyta++;
+    continue;
+  }
+  vinys.innerHTML+=`${kalimas} vinis ikalta ${smugis} smugiais, nepataikyta ${nepataikyta} <br />`;
+  smugis = 0;
+  nepataikyta = 0;
+  kalimas++;
+}
+
+//7th exercise 
+document.getElementById('7uzduotis').innerHTML+='<h3>Septinta uzduotis</h3>';
+el7uzduotis = document.getElementById('7uzduotis');
+el7uzduotis.innerHTML += '<div id="tevinis"></div>';
+elParent = document.querySelector('#tevinis');
+
+let parentHeight = elParent.offsetHeight,
+    parentWidth = elParent.offsetWidth,
+    outside = 0;
+
+i = 0;
+while (i<300){
+  elParent.innerHTML +='<div class="vaikas"></div>';
+
+  let childSquare = document.querySelectorAll('.vaikas')[i],
+      randomTop = randomSkaicius(0,550),
+      randomLeft = randomSkaicius(0,550);
+
+  childSquare.style.top = randomTop+'px';
+  childSquare.style.left = randomLeft+'px';
+
+  if((randomTop > parentHeight) || (randomLeft > parentWidth)) {
+    outside++;
+  }
+  i++;
+
+  console.log(randomLeft)
+}
+
+elParent.innerHTML += '<div style="color: #FFF; font-size: 100px; position: absolute; top: 200px; left: 200px; font-weight: bold;">' + outside + '</div>';
+el7uzduotis.innerHTML += '<h4 style="margin-top: 100px;">Už kraštinių išsikišūsių elementų suma: ' + outside + '</h4>';
+
+//2021 07 26 exercises
+
+//functions: 
+//let stringas = 'Pavasarį žydi labai daug medžių';
+
+//Apie length
+//console.log(stringas.length); //Konsoleje atvaizduojamas kintamojo reiksmes simboliu kiekis
+
+//Apie split
+//let stringo_masyvas = stringas.split(' ');
+
+//console.log( stringo_masyvas[4] );
+
+//Apie replace()
+//console.log( stringas.replace('žydi', 'atgminsta') );  //Konsoleje atvaizduojamas naujas sakinys su pakeistu zodziu zydi i zodi atgimsta
+
+//Apie repeat()
+//console.log( stringas.repeat(1) );
+
+//Apie charAt() Graziname viena simboli is specifiskos pozicijos
+//console.log( stringas.charAt(0) );
+
+//Apie substr() Graziname simbolius nuo pirmame parametre nurodytos pozicijos iki antrame parametre nurodyto kiekio
+//console.log( stringas.substr(10, 9) );
+
+//Apie toLowerCase()
+//console.log( stringas.toLowerCase() );
+
+//Apie toUpperCase()
+//console.log( stringas.toUpperCase() );
+
+//Apie trim()
+//stringas = '    Pavasarį žydi labai daug medžių         ';
+
+//console.log( stringas.trim() );
+
+//Apie startsWith() true arba false rezultatas
+//boolean
+//console.log( stringas.startsWith('P') );
+
+//Apie endsWith() auksciau minetos funkcijos priespriesa
+//console.log( stringas.endsWith('ų') );
+
+//Apie includes() 
+//console.log( stringas.includes('v') );
+
+//Apie indexOf() 
+//console.log(stringas.indexOf('žydi'));
+
+//Apie lastIndexOf()
+//console.log(stringas.lastIndexOf('ž'));
+
+
+//1st exercise
+document.querySelector('.funkcijuUzdaviniai').innerHTML+='<h3>Pirma uzduotis</h3>';
+exercise = document.querySelector('.funkcijuUzdaviniai');
+
+let director1st = 'Quentin Tarantino',
+    director2nd = 'Guy Ritchie',
+    director = '';
+
+if(director1st.length > director2nd.length ){
+  director+=director1st;
+}
+else{
+  director+=director2nd;
+}
+exercise.innerHTML += director;
+
+//2nd exercise
+exercise.innerHTML+='<h3>Antra uzduotis</h3>';
+let uppercase1st = director1st.substr(0,7),
+    lowercase1st = director1st.substr(8,9),
+    uppercase2nd = director2nd.substr(0,3),
+    lowercase2nd = director2nd.substr(4,7);
+    exercise.innerHTML += `${uppercase1st.toUpperCase()} ${lowercase1st.toLowerCase()} </br>${uppercase2nd.toUpperCase()} ${lowercase2nd.toLowerCase()}`;
+
+//3rd exercise
+exercise.innerHTML+='<h3>Trecia uzduotis</h3>';
+let directorName = 'Quentin',
+    directorSurname = 'Tarantino',
+    starts = directorName.charAt(0)+directorSurname.charAt(0);
+exercise.innerHTML += starts;
+
+//4th exercise
+exercise.innerHTML+='<h3>Ketvirta uzduotis</h3>';
+let letters = directorName.substr(4,3)+directorSurname.substr(6,3);
+exercise.innerHTML += letters;
+    
+
