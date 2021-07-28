@@ -749,8 +749,72 @@ function wordLength(str,length){
 exercise.innerHTML+=`${wordLength(south,5)}<br>${wordLength(pietus,5)}`;
 
 //Optional exercise
+exercise.innerHTML += '<h3>Papildoma užduotis</h3>';
+
+raides = 'abcdefghijklmnopqrstuvwxyz';
+let randomraides = '';
+
+for ( var i = 0; i < 3; i++ ) {
+
+    randomraides += raides.charAt( Math.floor( Math.random() * raides.length) );
+
+}
+
+exercise.innerHTML += randomraides;
 
 
+//classwork 2021 07 28
+function headingas(uzduotis, tema = false, tevinis = '.funkcijuUzdaviniai') {
 
+    let child = document.querySelector(tevinis);
 
+    if(tema) {
+
+        let klase = tema.replace(' ', '').toLowerCase();
+
+        document.querySelector(tevinis).innerHTML += '<div class="' + klase + '"></div>'; //Kaip ir ankstesneje uzduotyje sukurtas parent elementas uzduociai ir headingai kiekvienai is ju
+
+        child = document.querySelector('.' + klase);
+        
+        child.innerHTML += '<h1>' + tema + '</h1>';
+
+    } 
+
+    child.innerHTML += '<h3>' + uzduotis + '</h3>';
+
+}
+
+//1st exercise
+headingas('Pirma užduotis', 'Funkcijos 2021-07-28');
+
+function stringLength(stringas,stringas2){
+  let string = stringas.length,
+      string2 = stringas2.length,
+      length = '';
+      if(string>string2){
+        length += 'Pirmasis stringas yra ilgesnis už antrajį';
+      }
+      if(string<string2){
+        length += 'Pirmasis stringas yra trumpesnis už antrajį';
+      }
+      else if(string==string2)
+        length += 'Pirmasis stringas yra lygus antrąjam stringui';
+      
+    return length;
+}
+exercise.innerHTML+=stringLength(south,pietus);
+
+//2nd exercise
+headingas('Antra uzduotis', 'Funkcijos 2021-07-28');
+// let vardas = 'Benas',
+//     metai = '29',
+//     mergina = 'Božana',
+//     suo = 'Setas',
+//     mirsi = 'niekada';
+
+// function life(name,age,girlfriend,dog,die){
+//   lifeString = `Jūs būsite ${name} ir gyvensite ${age}. Susituoksite su ${girlfriend} bei turėsite šunį vardu ${dog}, o mirsite sulaukę ${die} metų.`;
+//   return lifeString;
+// }
+// exercise.innerHTML+=life(vardas,age,girlfriend,dog,die);
 
