@@ -805,16 +805,131 @@ function stringLength(stringas,stringas2){
 exercise.innerHTML+=stringLength(south,pietus);
 
 //2nd exercise
-headingas('Antra uzduotis', 'Funkcijos 2021-07-28');
-// let vardas = 'Benas',
-//     metai = '29',
-//     mergina = 'Božana',
-//     suo = 'Setas',
-//     mirsi = 'niekada';
+exercise.innerHTML += '<h3>Antra užduotis</h3>';
+let firstName = 'Benas',
+    home = 'Kaune',
+    girl = 'Božana',
+    pet = 'Setas',
+    death = 'begalybės',
+    firstName2 = 'Povilas',
+    home2 = 'Vilniuje',
+    girl2 = 'Aldona',
+    pet2 = 'Dingas',
+    death2 = '45',
+    firstName3 = 'Juozas',
+    home3 = 'Klaipedoje',
+    girl3 = 'Birute',
+    pet3 = 'Maksas',
+    death3 = '70';
 
-// function life(name,age,girlfriend,dog,die){
-//   lifeString = `Jūs būsite ${name} ir gyvensite ${age}. Susituoksite su ${girlfriend} bei turėsite šunį vardu ${dog}, o mirsite sulaukę ${die} metų.`;
-//   return lifeString;
-// }
-// exercise.innerHTML+=life(vardas,age,girlfriend,dog,die);
+function life(name,place,girlfriend,dog,die){
+  lifeString = `Jūs būsite ${name} ir gyvensite ${place}. Susituoksite su ${girlfriend} bei turėsite šunį vardu ${dog}, o mirsite sulaukę ${die} metų.`;
+  return lifeString;
+}
+let bence = life(firstName,home,girl,pet,death),
+    povilas = life(firstName2,home2,girl2,pet2,death2),
+    juozas = life(firstName3,home3,girl3,pet3,death3);
 
+exercise.innerHTML+=`${bence}<br>${povilas}<br>${juozas}`;
+
+//3rd exercise
+exercise.innerHTML += '<h3>Trecia užduotis</h3>';
+
+function dogYear(ageOfMen){
+  dogAge = (ageOfMen*7);
+  return dogAge;
+}
+ageOfDog = dogYear(29);
+exercise.innerHTML+=`Jūsų šuniukui yra ${ageOfDog} metų`;
+
+//4th exercise unfinished
+exercise.innerHTML += '<h3>Ketvirta užduotis</h3>';
+exercise.innerHTML += `Miles: <input name="miles" type="number" id="miles"/> <button name="milesSubmit" type="Submit" id="milesSubmit">Submit</button> KM: <input name="km" type="number" id="km"/><button name="kmSubmit" type="Submit" id="kmSubmit">Submit</button>
+`;
+document.getElementById("milesSubmit").addEventListener("click",milesConverter );
+document.getElementById("kmSubmit").addEventListener("click",kmConverter );
+
+function milesConverter(){
+  milesValue = document.getElementById("miles").value,
+  km = 0.621371192,
+  kmConverted = milesValue*km;
+}
+function kmConverter() {
+  kmValue = document.getElementById("km").value,
+  miles = 1.609344,
+  milesConverted = kmValue*miles;
+}
+
+// 2021 07 29 classwork
+// 1st exercise
+exercise.innerHTML += '<h1>Masyvai</h1>';
+exercise.innerHTML += '<h3>Pirma užduotis</h3>';
+let newArray = [];
+
+for(i=0; i < 30; i++){
+  let numb = randomSkaicius(5,25);
+  newArray.push(numb);
+}
+exercise.innerHTML += newArray;
+
+//2nd exercise 
+//a)
+exercise.innerHTML += '<h3>Antra užduotis </h3>';
+let count = 0;
+for(let i=0; i<newArray.length; i++){
+  if(newArray[i]>10){
+    count++;
+  }
+}
+exercise.innerHTML += `<h5>a)</h5> ${count}`;
+//b)
+let maxIndex = newArray.indexOf(Math.max(...newArray)),
+    maxValue = Math.max(...newArray);
+
+exercise.innerHTML += `<h5>b)</h5> Max value: ${maxValue} and its index: ${maxIndex}`;
+//c)
+let even = newArray.filter(num => num % 2==0),
+    sumEven = even.reduce(sumFunction);
+
+function sumFunction(total, value) {
+  return total + value;
+}
+
+exercise.innerHTML += `<h5>c)</h5> Even numbers: ${even} Their sum value: ${sumEven}`;
+
+//d
+let negativeArray = [];
+for(i=0; i < 30; i++){
+  let minus = newArray[i] -1;
+  negativeArray.push(minus);
+}
+
+exercise.innerHTML += `<h5>d)</h5> Array made out of first array - index: ${negativeArray}`;
+
+//e
+for(i=0; i<10; i++){
+  let numb2 = randomSkaicius(5,25);
+  negativeArray.push(numb2);
+}
+exercise.innerHTML += `<h5>e)</h5> Array made out of first array + 10 more numbers: ${negativeArray}`;
+
+//f
+let evenArray = [],
+    oddArray = [],
+    even2 = negativeArray.filter(num => num % 2==0),
+    odd = negativeArray.filter(num => num % 2!=0);
+    evenArray = even2;
+    oddArray = odd;
+  exercise.innerHTML += `<h5>f)</h5> Even numbers array from last array: ${evenArray}<br>Odd numbers array from last array: ${oddArray}`;
+
+//g
+// let minIndex = newArray.indexOf(Math.min(...newArray)),
+//     minValue = Math.min(...newArray);
+let result = true;
+    for(i=0;i<negativeArray.length; i++){
+      if(negativeArray[i]>=10)
+      result = false;
+      break;
+      
+    }
+exercise.innerHTML += `<h5>g)</h5> Min value: ${minValue} and its index: ${minIndex}`;
