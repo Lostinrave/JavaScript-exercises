@@ -888,15 +888,15 @@ let maxValue = Math.max(...newArray),
     
 
 exercise.innerHTML += `<h5>b)</h5> Max value: ${maxValue} and its index: ${maxIndex}`;
-//c) should have been even index values
-let even = newArray.filter(num => num % 2==0),
+//c) 
+let even = newArray.filter((num,index) => index % 2==0),
     sumEven = even.reduce(sumFunction);
 
 function sumFunction(total, value) {
   return total + value;
 }
 
-exercise.innerHTML += `<h5>c)</h5> Even numbers: ${even} Their sum value: ${sumEven}`;
+exercise.innerHTML += `<h5>c)</h5> Even index values: ${even} Their sum value: ${sumEven}`;
 
 //d
 let negativeArray = [];
@@ -914,14 +914,14 @@ for(i=0; i<10; i++){
 }
 exercise.innerHTML += `<h5>e)</h5> Array made out of first array + 10 more numbers: ${negativeArray}`;
 
-//f should have been even and odd index values
+//f 
 let evenArray = [],
     oddArray = [],
     even2 = negativeArray.filter((num,index )=> index % 2==0),
     odd = negativeArray.filter((num,index )=> index % 2!=0);
     evenArray.push(even2);
     oddArray.push(odd);
-  exercise.innerHTML += `<h5>f)</h5> Even numbers from last array: ${evenArray}<br>Odd numbers from last array: ${oddArray}`;
+  exercise.innerHTML += `<h5>f)</h5> Even index values from last array: ${evenArray}<br>Odd index values from last array: ${oddArray}`;
 
 //g
 
