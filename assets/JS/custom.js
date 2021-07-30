@@ -883,11 +883,12 @@ for(let i=0; i<newArray.length; i++){
 }
 exercise.innerHTML += `<h5>a)</h5> ${count}`;
 //b)
-let maxIndex = newArray.indexOf(Math.max(...newArray)),
-    maxValue = Math.max(...newArray);
+let maxValue = Math.max(...newArray),
+    maxIndex = newArray.indexOf(maxValue);
+    
 
 exercise.innerHTML += `<h5>b)</h5> Max value: ${maxValue} and its index: ${maxIndex}`;
-//c)
+//c) should have been even index values
 let even = newArray.filter(num => num % 2==0),
     sumEven = even.reduce(sumFunction);
 
@@ -900,7 +901,7 @@ exercise.innerHTML += `<h5>c)</h5> Even numbers: ${even} Their sum value: ${sumE
 //d
 let negativeArray = [];
 for(i=0; i < 30; i++){
-  let minus = newArray[i] -1;
+  let minus = (newArray[i] -i);
   negativeArray.push(minus);
 }
 
@@ -913,23 +914,29 @@ for(i=0; i<10; i++){
 }
 exercise.innerHTML += `<h5>e)</h5> Array made out of first array + 10 more numbers: ${negativeArray}`;
 
-//f
+//f should have been even and odd index values
 let evenArray = [],
     oddArray = [],
-    even2 = negativeArray.filter(num => num % 2==0),
-    odd = negativeArray.filter(num => num % 2!=0);
-    evenArray = even2;
-    oddArray = odd;
-  exercise.innerHTML += `<h5>f)</h5> Even numbers array from last array: ${evenArray}<br>Odd numbers array from last array: ${oddArray}`;
+    even2 = negativeArray.filter((num,index )=> index % 2==0),
+    odd = negativeArray.filter((num,index )=> index % 2!=0);
+    evenArray.push(even2);
+    oddArray.push(odd);
+  exercise.innerHTML += `<h5>f)</h5> Even numbers from last array: ${evenArray}<br>Odd numbers from last array: ${oddArray}`;
 
 //g
-// let minIndex = newArray.indexOf(Math.min(...newArray)),
-//     minValue = Math.min(...newArray);
-let result = true;
-    for(i=0;i<negativeArray.length; i++){
-      if(negativeArray[i]>=10)
-      result = false;
-      break;
-      
-    }
-exercise.innerHTML += `<h5>g)</h5> Min value: ${minValue} and its index: ${minIndex}`;
+
+for(i=0; i<newArray.length; i++){
+  if (newArray[i] <10)
+  continue;
+  minValue = newArray[i];
+  exercise.innerHTML += `<h5>g)</h5> Min value: ${minValue} and its index: ${i} `;
+
+  break;
+
+};
+
+//Optional
+let textArray = ['Jogile','Aiste','Jovita','Egle', 'Marius', 'Gintautas'],
+    sortArray = textArray.sort();
+    reverseArray = textArray.reverse();
+exercise.innerHTML += `<h5>optional</h5> Sorted: ${sortArray}<br>${reverseArray}  `;
