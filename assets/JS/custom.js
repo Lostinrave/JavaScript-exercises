@@ -998,11 +998,47 @@ unique4.push(unique.filter(val => unique2.includes(val)));
 exercise.innerHTML += `<h3>5th exercise</h3> 4th unique array made out of 1st array and 2nd array duplicates: ${unique4}`;
 
 //6th exercise
-let unique5 = [];
-// for(i=0; i<unique.length; i++){
-//   unique5.push(unique[i]);
-// }
-unique5[213]=555;
-exercise.innerHTML += `<h3>5th exercise</h3>  ${unique5}`;
 
-console.log(unique5)
+let unique6 = [];
+
+for(i=0; i<10; i++){
+  let index1_2=randomSkaicius(5,25);
+  if(i<=1){
+    unique6.push(index1_2);
+  }
+  else{
+    unique6.push(unique6[i-2]+unique6[i-1]);
+  }
+}
+exercise.innerHTML += `<h3>6th exercise</h3>  ${unique6}`;
+
+//7th exercise
+let object = {},
+    objectToString = '';
+
+for(i=0; i<uniqueArray.length; i++){
+  object[uniqueArray[i]] = uniqueArray2[i];
+}
+for (x in object) {
+  objectToString += `Index: <b>${x}</b> Value: <b>${object[x]}</b> `;
+}
+
+exercise.innerHTML += `<h3>7th exercise</h3>${objectToString}`;
+
+//8th exercise
+let object2 = {},
+    alphabet = "abcdefghijklmnopqrstuvwxyz",
+    lettersArray = [],
+    numbersArray = [],
+    objectToString2 = '';
+for(i=0; i<100; i++){
+  let randomLetters = alphabet[Math.floor(Math.random() * alphabet.length)],
+      randomNumbs = randomSkaicius(55,5555);
+  lettersArray.push(randomLetters);
+  numbersArray.push(randomNumbs);
+  object2[lettersArray[i]] = numbersArray[i];
+}
+for (x in object2) {
+  objectToString2 += `Index: <b>${x}</b> Value: <b>${object2[x]}</b> `;
+}
+exercise.innerHTML += `<h3>8th exercise</h3>${objectToString2}`;
