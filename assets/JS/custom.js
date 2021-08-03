@@ -938,5 +938,71 @@ for(i=0; i<newArray.length; i++){
 //Optional
 let textArray = ['Jogile','Aiste','Jovita','Egle', 'Marius', 'Gintautas'],
     sortArray = textArray.sort();
-    reverseArray = textArray.reverse();
-exercise.innerHTML += `<h5>optional</h5> Sorted: ${sortArray}<br>${reverseArray}  `;
+    // reverseArray = textArray.reverse();
+exercise.innerHTML += `<h5>optional</h5> Sorted: ${sortArray}`;
+
+//2021 08 02
+//1st exercise 
+
+let randomArray = [],
+    possible = ['A','B','C','D'],
+    countA = 0,
+    countB = 0,
+    countC = 0,
+    countD = 0;
+for (let i = 0; i < 200; i++){
+  randomArray.push(possible[Math.floor(Math.random() * possible.length)]);
+  if(randomArray[i]=='A')
+  countA++;
+  if(randomArray[i]=='B')
+  countB++;
+  if(randomArray[i]=='C')
+  countC++;
+  if(randomArray[i]=='D')
+  countD++;
+}
+
+exercise.innerHTML += `<h3>1st exercise 2021 08 02</h3> Random array out of ABCD: ${randomArray}</br>There are ${countA} 'A' letters in an array</br>There are ${countB} 'B' letters in an array</br>There are ${countC} 'C' letters in an array</br>There are ${countD} 'D' letters in an array`;
+
+//2nd exercise
+let sortedArray = randomArray.sort(); 
+exercise.innerHTML += `<h3>2nd exercise</h3> Sorted: ${sortedArray}`;
+
+//3rd exercise
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+let uniqueArray = [],
+    uniqueArray2 = [];
+for(i=0; i < 100; i++){
+  let rNumber = randomSkaicius(100,999),
+      rNumber2 = randomSkaicius(100,999);
+  uniqueArray.push(rNumber);
+  uniqueArray2.push(rNumber2);
+}
+
+let unique = uniqueArray.filter(onlyUnique),
+    unique2 = uniqueArray2.filter(onlyUnique);
+
+exercise.innerHTML += `<h3>3rd exercise</h3> 1st unique array: ${unique}</br>2nd unique array: ${unique2}`;
+
+//4th exercise
+let unique3 = [];
+unique3.push(unique.filter(val => !unique2.includes(val)));
+
+exercise.innerHTML += `<h3>4th exercise</h3> 3rd unique array made out of 1st array with no dublicate values from 2nd array: ${unique3}`;
+
+//5th exercise
+let unique4 = [];
+unique4.push(unique.filter(val => unique2.includes(val)));
+exercise.innerHTML += `<h3>5th exercise</h3> 4th unique array made out of 1st array and 2nd array duplicates: ${unique4}`;
+
+//6th exercise
+let unique5 = [];
+// for(i=0; i<unique.length; i++){
+//   unique5.push(unique[i]);
+// }
+unique5[213]=555;
+exercise.innerHTML += `<h3>5th exercise</h3>  ${unique5}`;
+
+console.log(unique5)
