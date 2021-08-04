@@ -1026,19 +1026,23 @@ for (x in object) {
 exercise.innerHTML += `<h3>7th exercise</h3>${objectToString}`;
 
 //8th exercise
+function randomLettersString(stringLength){
+  let alphabet = "abcdefghijklmnopqrstuvwxyz", 
+      rLetters = '';
+for(let i=0; i<stringLength; i++){
+      rLetters += alphabet[Math.floor(Math.random() * alphabet.length)];
+}
+return rLetters;
+}
 let object2 = {},
-    alphabet = "abcdefghijklmnopqrstuvwxyz",
-    lettersArray = [],
-    numbersArray = [],
     objectToString2 = '';
 for(i=0; i<100; i++){
-  let randomLetters = alphabet[Math.floor(Math.random() * alphabet.length)],
+  let randomLetters = randomLettersString(4),
       randomNumbs = randomSkaicius(55,5555);
-  lettersArray.push(randomLetters);
-  numbersArray.push(randomNumbs);
-  object2[lettersArray[i]] = numbersArray[i];
+  object2[randomLetters] = randomNumbs;
 }
 for (x in object2) {
   objectToString2 += `Index: <b>${x}</b> Value: <b>${object2[x]}</b> `;
 }
+console.log(object2)
 exercise.innerHTML += `<h3>8th exercise</h3>${objectToString2}`;
