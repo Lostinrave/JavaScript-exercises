@@ -1056,13 +1056,14 @@ for(i=0; i < 115; i++){
   let numb = randomSkaicius(55,5555);
   array_0804.push(numb);
 }
+exercise.innerHTML += `<h3>1st exercise</h3>${array_0804}</br><h5>Optional</h5>`;
+
 for(i=0; i<array_0804.length; i++){
   if(i%2==1){
     exercise.innerHTML += ` Index: ${i} Value: ${array_0804[i]}`;
   }
   array_0804.splice(i-1,1);
 }
-exercise.innerHTML += `<h3>1st exercise</h3>${array_0804}`;
 
 //2nd exercise
 function randomRegenerator(array = [], x, y){
