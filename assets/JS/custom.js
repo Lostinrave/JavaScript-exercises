@@ -557,72 +557,76 @@ for (let i = 0; i <= 100; i++) {
 
 //6th exercise penkiuose cikluose reikia pasiekti 85 ir sustabdyti cikla
 
-
 let kalimas = 1,
-    smugis = 1;
-    vinys = document.getElementById('vinys');
+  smugis = 1;
+vinys = document.getElementById("vinys");
 
-for (let i=1; i<6; i++){
-  for (let k = randomSkaicius(5,20);k<85;k+=randomSkaicius(5,20)){
+for (let i = 1; i < 6; i++) {
+  for (let k = randomSkaicius(5, 20); k < 85; k += randomSkaicius(5, 20)) {
     smugis++;
   }
-  vinys.innerHTML+=`${kalimas} vinis ikalta ${smugis} smugiais; <br />`;
+  vinys.innerHTML += `${kalimas} vinis ikalta ${smugis} smugiais; <br />`;
   smugis = 0;
   kalimas++;
 }
 
 let miss = 0,
-    nepataikyta = 0;
+  nepataikyta = 0;
 
-for (let i=1; i<6; i++){
-  for (let k = randomSkaicius(20,30);k<85;k+=randomSkaicius(20,30)){
+for (let i = 1; i < 6; i++) {
+  for (let k = randomSkaicius(20, 30); k < 85; k += randomSkaicius(20, 30)) {
     smugis++;
-    miss = randomSkaicius(1,2);
-    if (miss === 2)
-    nepataikyta++;
+    miss = randomSkaicius(1, 2);
+    if (miss === 2) nepataikyta++;
     continue;
   }
-  vinys.innerHTML+=`${kalimas} vinis ikalta ${smugis} smugiais, nepataikyta ${nepataikyta} <br />`;
+  vinys.innerHTML += `${kalimas} vinis ikalta ${smugis} smugiais, nepataikyta ${nepataikyta} <br />`;
   smugis = 0;
   nepataikyta = 0;
   kalimas++;
 }
 
-//7th exercise 
-document.getElementById('7uzduotis').innerHTML+='<h3>Septinta uzduotis</h3>';
-el7uzduotis = document.getElementById('7uzduotis');
+//7th exercise
+document.getElementById("7uzduotis").innerHTML += "<h3>Septinta uzduotis</h3>";
+el7uzduotis = document.getElementById("7uzduotis");
 el7uzduotis.innerHTML += '<div id="tevinis"></div>';
-elParent = document.querySelector('#tevinis');
+elParent = document.querySelector("#tevinis");
 
 let parentHeight = elParent.offsetHeight,
-    parentWidth = elParent.offsetWidth,
-    outside = 0;
+  parentWidth = elParent.offsetWidth,
+  outside = 0;
 
 i = 0;
-while (i<300){
-  elParent.innerHTML +='<div class="vaikas"></div>';
+while (i < 300) {
+  elParent.innerHTML += '<div class="vaikas"></div>';
 
-  let childSquare = document.querySelectorAll('.vaikas')[i],
-      randomTop = randomSkaicius(0,550),
-      randomLeft = randomSkaicius(0,550);
+  let childSquare = document.querySelectorAll(".vaikas")[i],
+    randomTop = randomSkaicius(0, 550),
+    randomLeft = randomSkaicius(0, 550);
 
-  childSquare.style.top = randomTop+'px';
-  childSquare.style.left = randomLeft+'px';
+  childSquare.style.top = randomTop + "px";
+  childSquare.style.left = randomLeft + "px";
 
-  if((randomTop > parentHeight) || (randomLeft > parentWidth)) {
+  if (randomTop > parentHeight || randomLeft > parentWidth) {
     outside++;
   }
   i++;
 
-  console.log(randomLeft)
+  console.log(randomLeft);
 }
 
-elParent.innerHTML += '<div style="color: #FFF; font-size: 100px; position: absolute; top: 200px; left: 200px; font-weight: bold;">' + outside + '</div>';
-el7uzduotis.innerHTML += '<h4 style="margin-top: 100px;">Už kraštinių išsikišūsių elementų suma: ' + outside + '</h4>';
+elParent.innerHTML +=
+  '<div style="color: #FFF; font-size: 100px; position: absolute; top: 200px; left: 200px; font-weight: bold;">' +
+  outside +
+  "</div>";
+el7uzduotis.innerHTML +=
+  '<h4 style="margin-top: 100px;">Už kraštinių išsikišūsių elementų suma: ' +
+  outside +
+  "</h4>";
 
 //2021 07 26 exercises
 
-//functions: 
+//functions:
 //let stringas = 'Pavasarį žydi labai daug medžių';
 
 //Apie length
@@ -663,234 +667,229 @@ el7uzduotis.innerHTML += '<h4 style="margin-top: 100px;">Už kraštinių išsiki
 //Apie endsWith() auksciau minetos funkcijos priespriesa
 //console.log( stringas.endsWith('ų') );
 
-//Apie includes() 
+//Apie includes()
 //console.log( stringas.includes('v') );
 
-//Apie indexOf() 
+//Apie indexOf()
 //console.log(stringas.indexOf('žydi'));
 
 //Apie lastIndexOf()
 //console.log(stringas.lastIndexOf('ž'));
 
-
 //1st exercise
-document.querySelector('.funkcijuUzdaviniai').innerHTML+='<h3>Pirma uzduotis</h3>';
-exercise = document.querySelector('.funkcijuUzdaviniai');
+document.querySelector(".funkcijuUzdaviniai").innerHTML +=
+  "<h3>Pirma uzduotis</h3>";
+exercise = document.querySelector(".funkcijuUzdaviniai");
 
-let director1st = 'Quentin Tarantino',
-    director2nd = 'Guy Ritchie',
-    director = '';
+let director1st = "Quentin Tarantino",
+  director2nd = "Guy Ritchie",
+  director = "";
 
-if(director1st.length > director2nd.length ){
-  director+=director1st;
-}
-else{
-  director+=director2nd;
+if (director1st.length > director2nd.length) {
+  director += director1st;
+} else {
+  director += director2nd;
 }
 exercise.innerHTML += director;
 
 //2nd exercise
-exercise.innerHTML+='<h3>Antra uzduotis</h3>';
-let uppercase1st = director1st.substr(0,7),
-    lowercase1st = director1st.substr(8,9),
-    uppercase2nd = director2nd.substr(0,3),
-    lowercase2nd = director2nd.substr(4,7);
-    exercise.innerHTML += `${uppercase1st.toUpperCase()} ${lowercase1st.toLowerCase()} </br>${uppercase2nd.toUpperCase()} ${lowercase2nd.toLowerCase()}`;
+exercise.innerHTML += "<h3>Antra uzduotis</h3>";
+let uppercase1st = director1st.substr(0, 7),
+  lowercase1st = director1st.substr(8, 9),
+  uppercase2nd = director2nd.substr(0, 3),
+  lowercase2nd = director2nd.substr(4, 7);
+exercise.innerHTML += `${uppercase1st.toUpperCase()} ${lowercase1st.toLowerCase()} </br>${uppercase2nd.toUpperCase()} ${lowercase2nd.toLowerCase()}`;
 
 //3rd exercise
-exercise.innerHTML+='<h3>Trecia uzduotis</h3>';
-let directorName = 'Quentin',
-    directorSurname = 'Tarantino',
-    starts = directorName.charAt(0)+directorSurname.charAt(0);
+exercise.innerHTML += "<h3>Trecia uzduotis</h3>";
+let directorName = "Quentin",
+  directorSurname = "Tarantino",
+  starts = directorName.charAt(0) + directorSurname.charAt(0);
 exercise.innerHTML += starts;
 
 //4th exercise
-exercise.innerHTML+='<h3>Ketvirta uzduotis</h3>';
-let initials = directorName.substr(4,3)+directorSurname.substr(6,3);
+exercise.innerHTML += "<h3>Ketvirta uzduotis</h3>";
+let initials = directorName.substr(4, 3) + directorSurname.substr(6, 3);
 exercise.innerHTML += initials;
 
 //5th exercise
-exercise.innerHTML+='<h3>Penkta uzduotis</h3>';
-let movie = 'Once upon a time in hollywood',
-    movieReplace = movie.replace(/O|o/g, "*");
+exercise.innerHTML += "<h3>Penkta uzduotis</h3>";
+let movie = "Once upon a time in hollywood",
+  movieReplace = movie.replace(/O|o/g, "*");
 exercise.innerHTML += movieReplace;
 
 //6th exercise
 
-exercise.innerHTML+='<h3>Sesta uzduotis</h3>';   
-let movieSplit = movie.split(/O|o/g).length -1;
+exercise.innerHTML += "<h3>Sesta uzduotis</h3>";
+let movieSplit = movie.split(/O|o/g).length - 1;
 exercise.innerHTML += movieSplit;
 
 //7th exercise
-exercise.innerHTML+='<h3>Septinta uzduotis</h3>';
-let movie1st = 'An American in Paris',
-    movie2nd = "Breakfast at Tiffany's",
-    movie3rd = '2001: A Space Odyssey',
-    movie4th = "It's a Wonderful Life";
-exercise.innerHTML += `${movie1st.replace(/[aeiou]/ig,'')}<br>`;
-exercise.innerHTML += `${movie2nd.replace(/[aeiou]/ig,'')}<br>`;
-exercise.innerHTML += `${movie3rd.replace(/[aeiou]/ig,'')}<br>`;
-exercise.innerHTML += `${movie4th.replace(/[aeiou]/ig,'')}<br>`;
+exercise.innerHTML += "<h3>Septinta uzduotis</h3>";
+let movie1st = "An American in Paris",
+  movie2nd = "Breakfast at Tiffany's",
+  movie3rd = "2001: A Space Odyssey",
+  movie4th = "It's a Wonderful Life";
+exercise.innerHTML += `${movie1st.replace(/[aeiou]/gi, "")}<br>`;
+exercise.innerHTML += `${movie2nd.replace(/[aeiou]/gi, "")}<br>`;
+exercise.innerHTML += `${movie3rd.replace(/[aeiou]/gi, "")}<br>`;
+exercise.innerHTML += `${movie4th.replace(/[aeiou]/gi, "")}<br>`;
 
 //8th exercise
-exercise.innerHTML+='<h3>Astunta uzduotis</h3>';
-function wordLength(str,length){
-  let strArray = str.split(' '),
+exercise.innerHTML += "<h3>Astunta uzduotis</h3>";
+function wordLength(str, length) {
+  let strArray = str.split(" "),
     count = 0;
-    for(let i=0; i<strArray.length; i++){
-      if(strArray[i].length<=length){
-        count++;
-      }
+  for (let i = 0; i < strArray.length; i++) {
+    if (strArray[i].length <= length) {
+      count++;
     }
-    return count;
+  }
+  return count;
 }
-  let south = "Don't Be a Menace to South Central While Drinking Your Juice in the Hood",
-  pietus = 'Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale';
-exercise.innerHTML+=`${wordLength(south,5)}<br>${wordLength(pietus,5)}`;
+let south =
+    "Don't Be a Menace to South Central While Drinking Your Juice in the Hood",
+  pietus =
+    "Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale";
+exercise.innerHTML += `${wordLength(south, 5)}<br>${wordLength(pietus, 5)}`;
 
 //Optional exercise
-exercise.innerHTML += '<h3>Papildoma užduotis</h3>';
+exercise.innerHTML += "<h3>Papildoma užduotis</h3>";
 
-raides = 'abcdefghijklmnopqrstuvwxyz';
-let randomraides = '';
+raides = "abcdefghijklmnopqrstuvwxyz";
+let randomraides = "";
 
-for ( var i = 0; i < 3; i++ ) {
-
-    randomraides += raides.charAt( Math.floor( Math.random() * raides.length) );
-
+for (var i = 0; i < 3; i++) {
+  randomraides += raides.charAt(Math.floor(Math.random() * raides.length));
 }
 
 exercise.innerHTML += randomraides;
 
-
 //classwork 2021 07 28
-function headingas(uzduotis, tema = false, tevinis = '.funkcijuUzdaviniai') {
+function headingas(uzduotis, tema = false, tevinis = ".funkcijuUzdaviniai") {
+  let child = document.querySelector(tevinis);
 
-    let child = document.querySelector(tevinis);
+  if (tema) {
+    let klase = tema.replace(" ", "").toLowerCase();
 
-    if(tema) {
+    document.querySelector(tevinis).innerHTML +=
+      '<div class="' + klase + '"></div>'; //Kaip ir ankstesneje uzduotyje sukurtas parent elementas uzduociai ir headingai kiekvienai is ju
 
-        let klase = tema.replace(' ', '').toLowerCase();
+    child = document.querySelector("." + klase);
 
-        document.querySelector(tevinis).innerHTML += '<div class="' + klase + '"></div>'; //Kaip ir ankstesneje uzduotyje sukurtas parent elementas uzduociai ir headingai kiekvienai is ju
+    child.innerHTML += "<h1>" + tema + "</h1>";
+  }
 
-        child = document.querySelector('.' + klase);
-        
-        child.innerHTML += '<h1>' + tema + '</h1>';
-
-    } 
-
-    child.innerHTML += '<h3>' + uzduotis + '</h3>';
-
+  child.innerHTML += "<h3>" + uzduotis + "</h3>";
 }
 
 //1st exercise
-headingas('Pirma užduotis', 'Funkcijos 2021-07-28');
+headingas("Pirma užduotis", "Funkcijos 2021-07-28");
 
-function stringLength(stringas,stringas2){
+function stringLength(stringas, stringas2) {
   let string = stringas.length,
-      string2 = stringas2.length,
-      length = '';
-      if(string>string2){
-        length += 'Pirmasis stringas yra ilgesnis už antrajį';
-      }
-      if(string<string2){
-        length += 'Pirmasis stringas yra trumpesnis už antrajį';
-      }
-      else if(string==string2)
-        length += 'Pirmasis stringas yra lygus antrąjam stringui';
-      
-    return length;
+    string2 = stringas2.length,
+    length = "";
+  if (string > string2) {
+    length += "Pirmasis stringas yra ilgesnis už antrajį";
+  }
+  if (string < string2) {
+    length += "Pirmasis stringas yra trumpesnis už antrajį";
+  } else if (string == string2)
+    length += "Pirmasis stringas yra lygus antrąjam stringui";
+
+  return length;
 }
-exercise.innerHTML+=stringLength(south,pietus);
+exercise.innerHTML += stringLength(south, pietus);
 
 //2nd exercise
-exercise.innerHTML += '<h3>Antra užduotis</h3>';
-let firstName = 'Benas',
-    home = 'Kaune',
-    girl = 'Božana',
-    pet = 'Setas',
-    death = 'begalybės',
-    firstName2 = 'Povilas',
-    home2 = 'Vilniuje',
-    girl2 = 'Aldona',
-    pet2 = 'Dingas',
-    death2 = '45',
-    firstName3 = 'Juozas',
-    home3 = 'Klaipedoje',
-    girl3 = 'Birute',
-    pet3 = 'Maksas',
-    death3 = '70';
+exercise.innerHTML += "<h3>Antra užduotis</h3>";
+let firstName = "Benas",
+  home = "Kaune",
+  girl = "Božana",
+  pet = "Setas",
+  death = "begalybės",
+  firstName2 = "Povilas",
+  home2 = "Vilniuje",
+  girl2 = "Aldona",
+  pet2 = "Dingas",
+  death2 = "45",
+  firstName3 = "Juozas",
+  home3 = "Klaipedoje",
+  girl3 = "Birute",
+  pet3 = "Maksas",
+  death3 = "70";
 
-function life(name,place,girlfriend,dog,die){
+function life(name, place, girlfriend, dog, die) {
   lifeString = `Jūs būsite ${name} ir gyvensite ${place}. Susituoksite su ${girlfriend} bei turėsite šunį vardu ${dog}, o mirsite sulaukę ${die} metų.`;
   return lifeString;
 }
-let bence = life(firstName,home,girl,pet,death),
-    povilas = life(firstName2,home2,girl2,pet2,death2),
-    juozas = life(firstName3,home3,girl3,pet3,death3);
+let bence = life(firstName, home, girl, pet, death),
+  povilas = life(firstName2, home2, girl2, pet2, death2),
+  juozas = life(firstName3, home3, girl3, pet3, death3);
 
-exercise.innerHTML+=`${bence}<br>${povilas}<br>${juozas}`;
+exercise.innerHTML += `${bence}<br>${povilas}<br>${juozas}`;
 
 //3rd exercise
-exercise.innerHTML += '<h3>Trecia užduotis</h3>';
+exercise.innerHTML += "<h3>Trecia užduotis</h3>";
 
-function dogYear(ageOfMen){
-  dogAge = (ageOfMen*7);
+function dogYear(ageOfMen) {
+  dogAge = ageOfMen * 7;
   return dogAge;
 }
 ageOfDog = dogYear(29);
-exercise.innerHTML+=`Jūsų šuniukui yra ${ageOfDog} metų`;
+exercise.innerHTML += `Jūsų šuniukui yra ${ageOfDog} metų`;
 
 //4th exercise unfinished
-exercise.innerHTML += '<h3>Ketvirta užduotis</h3>';
+exercise.innerHTML += "<h3>Ketvirta užduotis</h3>";
 exercise.innerHTML += `Miles: <input name="miles" type="number" id="miles"/> <button name="milesSubmit" type="Submit" id="milesSubmit">Submit</button> KM: <input name="km" type="number" id="km"/><button name="kmSubmit" type="Submit" id="kmSubmit">Submit</button>
 `;
-document.getElementById("milesSubmit").addEventListener("click",milesConverter );
-document.getElementById("kmSubmit").addEventListener("click",kmConverter );
+document
+  .getElementById("milesSubmit")
+  .addEventListener("click", milesConverter);
+document.getElementById("kmSubmit").addEventListener("click", kmConverter);
 
-function milesConverter(){
-  milesValue = document.getElementById("miles").value,
-  km = 0.621371192,
-  kmConverted = milesValue*km;
+function milesConverter() {
+  (milesValue = document.getElementById("miles").value),
+    (km = 0.621371192),
+    (kmConverted = milesValue * km);
 }
 function kmConverter() {
-  kmValue = document.getElementById("km").value,
-  miles = 1.609344,
-  milesConverted = kmValue*miles;
+  (kmValue = document.getElementById("km").value),
+    (miles = 1.609344),
+    (milesConverted = kmValue * miles);
 }
 
 // 2021 07 29 classwork
 // 1st exercise
-exercise.innerHTML += '<h1>Masyvai</h1>';
-exercise.innerHTML += '<h3>Pirma užduotis</h3>';
+exercise.innerHTML += "<h1>Masyvai</h1>";
+exercise.innerHTML += "<h3>Pirma užduotis</h3>";
 let newArray = [];
 
-for(i=0; i < 30; i++){
-  let numb = randomSkaicius(5,25);
+for (i = 0; i < 30; i++) {
+  let numb = randomSkaicius(5, 25);
   newArray.push(numb);
 }
 exercise.innerHTML += newArray;
 
-//2nd exercise 
+//2nd exercise
 //a)
-exercise.innerHTML += '<h3>Antra užduotis </h3>';
+exercise.innerHTML += "<h3>Antra užduotis </h3>";
 let count = 0;
-for(let i=0; i<newArray.length; i++){
-  if(newArray[i]>10){
+for (let i = 0; i < newArray.length; i++) {
+  if (newArray[i] > 10) {
     count++;
   }
 }
 exercise.innerHTML += `<h5>a)</h5> ${count}`;
 //b)
 let maxValue = Math.max(...newArray),
-    maxIndex = newArray.indexOf(maxValue);
-    
+  maxIndex = newArray.indexOf(maxValue);
 
 exercise.innerHTML += `<h5>b)</h5> Max value: ${maxValue} and its index: ${maxIndex}`;
-//c) 
-let even = newArray.filter((num,index) => index % 2==0),
-    sumEven = even.reduce(sumFunction);
+//c)
+let even = newArray.filter((num, index) => index % 2 == 0),
+  sumEven = even.reduce(sumFunction);
 
 function sumFunction(total, value) {
   return total + value;
@@ -900,72 +899,66 @@ exercise.innerHTML += `<h5>c)</h5> Even index values: ${even} Their sum value: $
 
 //d
 let negativeArray = [];
-for(i=0; i < 30; i++){
-  let minus = (newArray[i] -i);
+for (i = 0; i < 30; i++) {
+  let minus = newArray[i] - i;
   negativeArray.push(minus);
 }
 
 exercise.innerHTML += `<h5>d)</h5> Array made out of first array - index: ${negativeArray}`;
 
 //e
-for(i=0; i<10; i++){
-  let numb2 = randomSkaicius(5,25);
+for (i = 0; i < 10; i++) {
+  let numb2 = randomSkaicius(5, 25);
   negativeArray.push(numb2);
 }
 exercise.innerHTML += `<h5>e)</h5> Array made out of first array + 10 more numbers: ${negativeArray}`;
 
-//f 
+//f
 let evenArray = [],
-    oddArray = [],
-    even2 = negativeArray.filter((num,index )=> index % 2==0),
-    odd = negativeArray.filter((num,index )=> index % 2!=0);
-    evenArray.push(even2);
-    oddArray.push(odd);
-  exercise.innerHTML += `<h5>f)</h5> Even index values from last array: ${evenArray}<br>Odd index values from last array: ${oddArray}`;
+  oddArray = [],
+  even2 = negativeArray.filter((num, index) => index % 2 == 0),
+  odd = negativeArray.filter((num, index) => index % 2 != 0);
+evenArray.push(even2);
+oddArray.push(odd);
+exercise.innerHTML += `<h5>f)</h5> Even index values from last array: ${evenArray}<br>Odd index values from last array: ${oddArray}`;
 
 //g
 
-for(i=0; i<newArray.length; i++){
-  if (newArray[i] <10)
-  continue;
+for (i = 0; i < newArray.length; i++) {
+  if (newArray[i] < 10) continue;
   minValue = newArray[i];
   exercise.innerHTML += `<h5>g)</h5> Min value: ${minValue} and its index: ${i} `;
 
   break;
-
-};
+}
 
 //Optional
-let textArray = ['Jogile','Aiste','Jovita','Egle', 'Marius', 'Gintautas'],
-    sortArray = textArray.sort();
-    // reverseArray = textArray.reverse();
+let textArray = ["Jogile", "Aiste", "Jovita", "Egle", "Marius", "Gintautas"],
+  sortArray = textArray.sort();
+// reverseArray = textArray.reverse();
 exercise.innerHTML += `<h5>optional</h5> Sorted: ${sortArray}`;
 
 //2021 08 02
-//1st exercise 
+//1st exercise
 
 let randomArray = [],
-    possible = ['A','B','C','D'],
-    countA = 0,
-    countB = 0,
-    countC = 0,
-    countD = 0;
-for (let i = 0; i < 200; i++){
+  possible = ["A", "B", "C", "D"],
+  countA = 0,
+  countB = 0,
+  countC = 0,
+  countD = 0;
+for (let i = 0; i < 200; i++) {
   randomArray.push(possible[Math.floor(Math.random() * possible.length)]);
-  if(randomArray[i]=='A')
-  countA++;
-  if(randomArray[i]=='B')
-  countB++;
-  if(randomArray[i]=='C')
-  countC++;
-  if(randomArray[i]=='D')
-  countD++;
+  if (randomArray[i] == "A") countA++;
+  if (randomArray[i] == "B") countB++;
+  if (randomArray[i] == "C") countC++;
+  if (randomArray[i] == "D") countD++;
 }
 
 exercise.innerHTML += `<h3>1st exercise 2021 08 02</h3> Random array out of ABCD: ${randomArray}</br>There are ${countA} 'A' letters in an array</br>There are ${countB} 'B' letters in an array</br>There are ${countC} 'C' letters in an array</br>There are ${countD} 'D' letters in an array`;
 
 //2nd exercise
-let sortedArray = randomArray.sort(); 
+let sortedArray = randomArray.sort();
 exercise.innerHTML += `<h3>2nd exercise</h3> Sorted: ${sortedArray}`;
 
 //3rd exercise
@@ -973,50 +966,49 @@ function onlyUnique(value, index, self) {
   return self.indexOf(value) === index;
 }
 let uniqueArray = [],
-    uniqueArray2 = [];
-for(i=0; i < 100; i++){
-  let rNumber = randomSkaicius(100,999),
-      rNumber2 = randomSkaicius(100,999);
+  uniqueArray2 = [];
+for (i = 0; i < 100; i++) {
+  let rNumber = randomSkaicius(100, 999),
+    rNumber2 = randomSkaicius(100, 999);
   uniqueArray.push(rNumber);
   uniqueArray2.push(rNumber2);
 }
 
 let unique = uniqueArray.filter(onlyUnique),
-    unique2 = uniqueArray2.filter(onlyUnique);
+  unique2 = uniqueArray2.filter(onlyUnique);
 
 exercise.innerHTML += `<h3>3rd exercise</h3> 1st unique array: ${unique}</br>2nd unique array: ${unique2}`;
 
 //4th exercise
 let unique3 = [];
-unique3.push(unique.filter(val => !unique2.includes(val)));
+unique3.push(unique.filter((val) => !unique2.includes(val)));
 
 exercise.innerHTML += `<h3>4th exercise</h3> 3rd unique array made out of 1st array with no dublicate values from 2nd array: ${unique3}`;
 
 //5th exercise
 let unique4 = [];
-unique4.push(unique.filter(val => unique2.includes(val)));
+unique4.push(unique.filter((val) => unique2.includes(val)));
 exercise.innerHTML += `<h3>5th exercise</h3> 4th unique array made out of 1st array and 2nd array duplicates: ${unique4}`;
 
 //6th exercise
 
 let unique6 = [];
 
-for(i=0; i<10; i++){
-  let index1_2=randomSkaicius(5,25);
-  if(i<=1){
+for (i = 0; i < 10; i++) {
+  let index1_2 = randomSkaicius(5, 25);
+  if (i <= 1) {
     unique6.push(index1_2);
-  }
-  else{
-    unique6.push(unique6[i-2]+unique6[i-1]);
+  } else {
+    unique6.push(unique6[i - 2] + unique6[i - 1]);
   }
 }
 exercise.innerHTML += `<h3>6th exercise</h3>  ${unique6}`;
 
 //7th exercise
 let object = {},
-    objectToString = '';
+  objectToString = "";
 
-for(i=0; i<uniqueArray.length; i++){
+for (i = 0; i < uniqueArray.length; i++) {
   object[uniqueArray[i]] = uniqueArray2[i];
 }
 for (x in object) {
@@ -1026,59 +1018,100 @@ for (x in object) {
 exercise.innerHTML += `<h3>7th exercise</h3>${objectToString}`;
 
 //8th exercise
-function randomLettersString(stringLength){
-  let alphabet = "abcdefghijklmnopqrstuvwxyz", 
-      rLetters = '';
-for(let i=0; i<stringLength; i++){
-      rLetters += alphabet[Math.floor(Math.random() * alphabet.length)];
-}
-return rLetters;
+function randomLettersString(stringLength) {
+  let alphabet = "abcdefghijklmnopqrstuvwxyz",
+    rLetters = "";
+  for (let i = 0; i < stringLength; i++) {
+    rLetters += alphabet[Math.floor(Math.random() * alphabet.length)];
+  }
+  return rLetters;
 }
 let object2 = {},
-    objectToString2 = '';
-for(i=0; i<100; i++){
+  objectToString2 = "";
+for (i = 0; i < 100; i++) {
   let randomLetters = randomLettersString(4),
-      randomNumbs = randomSkaicius(55,5555);
+    randomNumbs = randomSkaicius(55, 5555);
   object2[randomLetters] = randomNumbs;
 }
 for (x in object2) {
   objectToString2 += `Index: <b>${x}</b> Value: <b>${object2[x]}</b> `;
 }
-console.log(object2)
+console.log(object2);
 exercise.innerHTML += `<h3>8th exercise</h3>${objectToString2}`;
 
 //2021-08-04 1st exercise
 exercise.innerHTML += `<h3>2021-08-04</h3>`;
 let array_0804 = [],
-    object3 = {};
+  object3 = {};
 
-for(i=0; i < 115; i++){
-  let numb = randomSkaicius(55,5555);
+for (i = 0; i < 115; i++) {
+  let numb = randomSkaicius(55, 5555);
   array_0804.push(numb);
 }
 exercise.innerHTML += `<h3>1st exercise</h3>${array_0804}</br><h5>Optional</h5>`;
 
-for(i=0; i<array_0804.length; i++){
-  if(i%2==1){
+for (i = 0; i < array_0804.length; i++) {
+  if (i % 2 == 1) {
     exercise.innerHTML += ` Index: ${i} Value: ${array_0804[i]}`;
   }
-  array_0804.splice(i-1,1);
+  array_0804.splice(i - 1, 1);
 }
 
 //2nd exercise
-function randomRegenerator(array = [], x, y){
-  for(let i=0; i<=array.length; i++){
-    let regNumber = randomSkaicius(x,y);
-    if(!array.includes(regNumber)){
+function randomRegenerator(array = [], x, y) {
+  for (let i = 0; i <= array.length; i++) {
+    let regNumber = randomSkaicius(x, y);
+    if (!array.includes(regNumber)) {
       return regNumber;
     }
   }
 }
 let noDublicatetArray = [];
 
-for(let i=0;i<115;i++){
-    noDublicatetArray.push(randomRegenerator(noDublicatetArray,0,300));
+for (let i = 0; i < 115; i++) {
+  noDublicatetArray.push(randomRegenerator(noDublicatetArray, 0, 300));
 }
 exercise.innerHTML += `<h3>2nd exercise</h3>${noDublicatetArray}`;
+
+//Table exercise once again
+exercise.innerHTML += `<h2>Last table</h2>`;
+exercise.innerHTML += `<table id="last_table" class="lentelesStilius"
+                      <thead>
+                      <th>City</th>
+                      <th>Adress</th>
+                      <th>Products left</th>
+                      </thead></table>`;
+let last_table = document.querySelector('#last_table > tbody'), // '>' selects first child element
+tableArray =[{
+  city: 'Kaunas',
+  adress: 'Jonavos 57',
+  products_left: '4'
+},
+{
+  city: 'Vilnius',
+  adress: 'Gelezinio vilko 82',
+  products_left: '2'
+},
+{
+  city: 'Klaipeda',
+  adress: 'Ligonines 13',
+  products_left: '0'
+}];
+
+for(let i=0; i<5; i++){
+  let tableObject = {
+    city: randomLettersString(15),
+    adress: randomLettersString(25),
+    products_left: randomSkaicius(1,129)
+  }
+  tableArray.push(tableObject);
+}
+
+for(let i=0; i<tableArray.length; i++){
+  last_table.innerHTML += `<td>${tableArray[i]['city']}</td>
+                          <td>${tableArray[i]['adress']}</td>
+                          <td>${tableArray[i]['products_left']}</td>`
+}
+
 
 
