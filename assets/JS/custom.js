@@ -1046,3 +1046,36 @@ for (x in object2) {
 }
 console.log(object2)
 exercise.innerHTML += `<h3>8th exercise</h3>${objectToString2}`;
+
+//2021-08-04 1st exercise
+exercise.innerHTML += `<h3>2021-08-04</h3>`;
+let array_0804 = [],
+    object3 = {};
+
+for(i=0; i < 115; i++){
+  let numb = randomSkaicius(5,25);
+  array_0804.push(numb);
+}
+for(i=0; i<array_0804.length; i++){
+  array_0804.splice(i-1,1);
+}
+exercise.innerHTML += `<h3>1st exercise</h3>${array_0804}`;
+
+//2nd exercise
+function randomRegenerator(array = [], x, y){
+  for(let i=0; i<array.length; i++){
+    let regNumber = randomSkaicius(x,y);
+    if(!array.includes(regNumber)){
+      return regNumber;
+    }
+  }
+}
+let noDublicatetArray = [];
+
+for(let i=0;i<15;i++){
+    noDublicatetArray.push(randomRegenerator(noDublicatetArray,0,300));
+    console.log(noDublicatetArray)
+}
+exercise.innerHTML += `<h3>2nd exercise</h3>${noDublicatetArray}`;
+
+
