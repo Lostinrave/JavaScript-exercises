@@ -1053,17 +1053,20 @@ let array_0804 = [],
     object3 = {};
 
 for(i=0; i < 115; i++){
-  let numb = randomSkaicius(5,25);
+  let numb = randomSkaicius(55,5555);
   array_0804.push(numb);
 }
 for(i=0; i<array_0804.length; i++){
+  if(i%2==1){
+    exercise.innerHTML += ` Index: ${i} Value: ${array_0804[i]}`;
+  }
   array_0804.splice(i-1,1);
 }
 exercise.innerHTML += `<h3>1st exercise</h3>${array_0804}`;
 
 //2nd exercise
 function randomRegenerator(array = [], x, y){
-  for(let i=0; i<array.length; i++){
+  for(let i=0; i<=array.length; i++){
     let regNumber = randomSkaicius(x,y);
     if(!array.includes(regNumber)){
       return regNumber;
@@ -1072,9 +1075,8 @@ function randomRegenerator(array = [], x, y){
 }
 let noDublicatetArray = [];
 
-for(let i=0;i<15;i++){
+for(let i=0;i<115;i++){
     noDublicatetArray.push(randomRegenerator(noDublicatetArray,0,300));
-    console.log(noDublicatetArray)
 }
 exercise.innerHTML += `<h3>2nd exercise</h3>${noDublicatetArray}`;
 
